@@ -8,16 +8,23 @@ class ListBustTypesComponent extends Component {
         this.state={
             BusTypes:[]
         }
+        this.AddBusTypes = this.AddBusTypes.bind(this);
     }
     componentDidMount(){
         BusTypesService.getBusTypes().then((res) =>{
             this.setState({BusTypes: res.data});
         });
     }
+    AddBusTypes(){
+        this.props.history.push('/AddBusTypes');
+    }
     render() {
         return (
             <div>
                 <h2 className='text-center'>Bus Types List</h2>
+                <div className="row">
+                    <button className='btn btn-primary' onClick={this.AddBusTypes}>Add Bus Type</button>
+                </div>
                 <div className='row'>
                     <table className='table table-striped table-bordered'>
                         <thead>
