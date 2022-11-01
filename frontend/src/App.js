@@ -8,6 +8,7 @@ import BusRooutesTable from './components/BusRouteTable/BusRoutesTable';
 import { Route, Routes } from 'react-router-dom';
 import AddBusRoute from './components/AddBussRoute/AddBusRoute';
 import RouteDetails from './components/RouteDetails/RouteDetails';
+import AdminDashborad from './components/AdminDashboard/AdminDashborad';
 import AddBusType from './components/AddBusType/AddBusTypesComponent';
 import BusTypesTable from './components/BusTypesTable/BusTypesTable';
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="container">
       <Routes>
+        <Route path='/' element={<AdminDashborad/>} />
         {/*Bus Routes*/}
         <Route path='/busRoutes' element={<BusRooutesTable/>} />
         <Route path='/busRoutes/add' element={<AddBusRoute/>} />
