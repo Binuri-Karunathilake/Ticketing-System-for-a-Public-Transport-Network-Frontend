@@ -12,7 +12,7 @@ class BusTypesService{
     }
 
     addBusType(BusType) {
-        return axios.post(API_URL+'/AddType', BusType);
+        return axios.post(API_URL+'BusTypes/AddType', BusType);
     }
     deleteBusType(BusTypeId) {
         return axios.delete(API_URL+'BusTypes/'+BusTypeId);
