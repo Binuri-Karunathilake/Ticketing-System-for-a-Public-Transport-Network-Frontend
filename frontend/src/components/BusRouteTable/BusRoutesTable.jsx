@@ -1,8 +1,32 @@
+import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import BusRoutesServices from "../../services/BusRoutesServices";
 import BusRoute from "./BusRoute";
 
 const BusRoutesTable = () => {
-  var route = { name: "", price: 0, stopList: "" };
+  const [routes, setRoutes] = useState([
+    {
+      name: "",
+      ticketPrice: 0,
+      stopList: [],
+      id: 0,
+    },
+  ]);
+
+  const getBusRoutes = async () => {
+    try {
+      const busRoutes = await BusRoutesServices.getBusRoutes();
+      setRoutes(busRoutes.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getBusRoutes();
+  }, []);
 
   return (
     <div>
@@ -23,7 +47,11 @@ const BusRoutesTable = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <BusRoute route={route} />
+                  {routes.map((route, index) => {
+                    return (
+                      <BusRoute route={route} key={route.id} index={index} />
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

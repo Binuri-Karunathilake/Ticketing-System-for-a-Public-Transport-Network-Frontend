@@ -3,8 +3,20 @@
 
 
 import React from "react";
+import StopDetails from "./StopDetails";
 
 const RouteDetails = () => {
+  const stopList = [
+    "Kandy",
+    "Mahaiyawa",
+    "Mavilmada",
+    "Katugasthota",
+    "Nawayalathenna",
+    "Polgolla",
+    "Madawala",
+    "Wattegama",
+  ];
+
   return (
     <div>
       <div className="row bg-grey h-100" style={{ height: "100%" }}>
@@ -33,7 +45,7 @@ const RouteDetails = () => {
               style={{ height: "100%" }}
             >
               <div className="card rounded-0 shadow align-middle">
-                <table class="table table-striped table-hover">
+                <table className="table table-striped table-hover">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -42,16 +54,9 @@ const RouteDetails = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                    </tr>
+                    {stopList.map((details, index) => {
+                      return <StopDetails details={details} index={index} />;
+                    })}
                   </tbody>
                 </table>
               </div>
