@@ -1,13 +1,13 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Route } from "react-router-dom";
 import BusTypesService from "../../services/BusTypesService";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import BusRoutesServices from "../../services/BusRoutesServices";
 
 const AddBusType = ({ type }) => {
-    console.log("Hello");
   const [BusType, setBusType] = useState({
     name: "",
     numberPlate: "",
@@ -15,6 +15,15 @@ const AddBusType = ({ type }) => {
     capacity: "",
     route:"",
   });
+
+  const [routes, setRoutes] = useState([
+    {
+      name: "",
+      ticketPrice: 0,
+      stopList: [],
+      id: 0,
+    },
+  ])
 
   const handleOnChange = (e) => {
     setBusType({ ...BusType, [e.target.name]: e.target.value });
@@ -45,7 +54,6 @@ const AddBusType = ({ type }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Hello");
     console.log(BusType); 
     try {
       const reply = await BusTypesService.addBusType(BusType);
@@ -55,6 +63,19 @@ const AddBusType = ({ type }) => {
       console.log(error);
     }
   };
+
+  const getRoutes = async () => {
+    try {
+      const routes1 = await BusRoutesServices.getBusRoutes();
+      setRoutes(routes1.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getRoutes();
+  }, [])
 
   return (
     <div className="">
@@ -142,7 +163,7 @@ const AddBusType = ({ type }) => {
                   <label for="route" className="form-label">
                     Route
                   </label>
-                  <input
+                  <select
                     type="number"
                     required
                     className="form-control"
@@ -150,7 +171,12 @@ const AddBusType = ({ type }) => {
                     name="route"
                     value={BusType.route}
                     onChange={handleOnChange}
-                  />
+                  >
+                    <option defaultChecked >---</option>
+                    {routes.map((route, index) => {
+                      return <option value={route.id}>{route.name}</option>
+                    })}
+                  </select>
                 </div>
                 <div className="col-12">
                   <button type="submit" className="btn btn-success me-3">
