@@ -8,17 +8,20 @@ import {
   MDBCol,
   MDBIcon,
   MDBCardHeader,
-} from 'mdb-react-ui-kit';
-
+} from "mdb-react-ui-kit";
 
 const AdminDashborad = () => {
   return (
     <div>
-      <NavBar/>
-      <br></br><br></br>
-      <br></br><br></br>
-      <br></br><br></br>
-      <br></br><br></br>
+      <NavBar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
 
 
     <div className="MDBROW" style={{paddingTop:'1%' ,paddingLeft:'4%' ,paddingRight:'4%'}}>
@@ -35,7 +38,6 @@ const AdminDashborad = () => {
             </Link>
        </MDBCard>
         </MDBCol>
-
 
           {/* <div class="card-header">Routes</div>
           <div class="card-body">
@@ -59,9 +61,7 @@ const AdminDashborad = () => {
        </MDBCard>
         </MDBCol>
 
-       
-        
-        {/* <div class="card">
+          {/* <div class="card">
           <div class="card-header">Featured</div>
           <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
@@ -110,7 +110,7 @@ const AdminDashborad = () => {
         </MDBCol>
        
 
-        {/* <div class="card">
+          {/* <div class="card">
           <div class="card-header">Featured</div>
           <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
@@ -123,10 +123,9 @@ const AdminDashborad = () => {
             </Link>
             </div>
           </div> */}
-      
         </MDBRow>
-        </div>
       </div>
+    </div>
   );
 };
 

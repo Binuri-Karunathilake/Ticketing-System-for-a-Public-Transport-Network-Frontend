@@ -13,7 +13,7 @@ const AddBusType = ({ type }) => {
     numberPlate: "",
     day: "",
     capacity: "",
-    route:"",
+    route: "",
   });
 
   const [routes, setRoutes] = useState([
@@ -23,20 +23,20 @@ const AddBusType = ({ type }) => {
       stopList: [],
       id: 0,
     },
-  ])
+  ]);
 
   const handleOnChange = (e) => {
     setBusType({ ...BusType, [e.target.name]: e.target.value });
   };
 
   const resetValue = (e) => {
-    setBusType({  
-    name: "",
-    numberPlate: "",
-    day: "",
-    capacity: "",
-    route: 0,
-});
+    setBusType({
+      name: "",
+      numberPlate: "",
+      day: "",
+      capacity: "",
+      route: 0,
+    });
   };
 
   const notify = () => {
@@ -54,7 +54,7 @@ const AddBusType = ({ type }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(BusType); 
+    console.log(BusType);
     try {
       const reply = await BusTypesService.addBusType(BusType);
       console.log(reply);
@@ -75,7 +75,7 @@ const AddBusType = ({ type }) => {
 
   useEffect(() => {
     getRoutes();
-  }, [])
+  }, []);
 
   return (
     <div className="">
@@ -115,7 +115,7 @@ const AddBusType = ({ type }) => {
                     onChange={handleOnChange}
                   />
                 </div>
-                
+
                 <div className="col-md-6">
                   <label for="numberPlate" className="form-label">
                     Number Plate
@@ -130,7 +130,7 @@ const AddBusType = ({ type }) => {
                     onChange={handleOnChange}
                   />
                 </div>
-               
+
                 <div className="col-md-6">
                   <label for="day" className="form-label">
                     Day
@@ -172,9 +172,9 @@ const AddBusType = ({ type }) => {
                     value={BusType.route}
                     onChange={handleOnChange}
                   >
-                    <option defaultChecked >---</option>
+                    <option defaultChecked>---</option>
                     {routes.map((route, index) => {
-                      return <option value={route.id}>{route.name}</option>
+                      return <option value={route.id}>{route.name}</option>;
                     })}
                   </select>
                 </div>
@@ -186,7 +186,7 @@ const AddBusType = ({ type }) => {
                     type="reset"
                     className="btn btn-warning"
                     onClick={resetValue}
-                    >
+                  >
                     Clear
                   </button>
                 </div>

@@ -19,6 +19,7 @@ const BusRoute = ({ route, index }) => {
           const reply = await BusRoutesServices.deleteBusRoute(route.id);
           console.log(reply);
           Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          window.location.reload(false);
         }
       });
     } catch (error) {}

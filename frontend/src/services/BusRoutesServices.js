@@ -12,6 +12,9 @@ class BusRoutesService {
     deleteBusRoute(routeId) {
         return axios.delete(API_URL+'busRoutes/'+routeId);
     }
+    getBusRoute(id) {
+        return axios.get(API_URL+'busRoutes/'+id);
+    }
 }
 
 export default new BusRoutesService;
