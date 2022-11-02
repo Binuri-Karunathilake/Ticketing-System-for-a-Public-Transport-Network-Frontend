@@ -16,6 +16,9 @@ const AdminDashborad = () => {
             <Link to="/BusRoutes" class="btn btn-primary">
               View Route
             </Link>
+            <Link to="/BusJourney" class="btn btn-primary">
+              Start Journey
+            </Link>
           </div>
         </div>
 

@@ -7,13 +7,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AddBusType = ({ type }) => {
-    console.log("Hello");
+  console.log("Hello");
   const [BusType, setBusType] = useState({
     name: "",
     numberPlate: "",
     day: "",
     capacity: "",
-    route:"",
+    route: "",
   });
 
   const handleOnChange = (e) => {
@@ -21,13 +21,13 @@ const AddBusType = ({ type }) => {
   };
 
   const resetValue = (e) => {
-    setBusType({  
-    name: "",
-    numberPlate: "",
-    day: "",
-    capacity: "",
-    route: 0,
-});
+    setBusType({
+      name: "",
+      numberPlate: "",
+      day: "",
+      capacity: "",
+      route: 0,
+    });
   };
 
   const notify = () => {
@@ -46,7 +46,7 @@ const AddBusType = ({ type }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Hello");
-    console.log(BusType); 
+    console.log(BusType);
     try {
       const reply = await BusTypesService.addBusType(BusType);
       console.log(reply);
@@ -94,7 +94,7 @@ const AddBusType = ({ type }) => {
                     onChange={handleOnChange}
                   />
                 </div>
-                
+
                 <div className="col-md-6">
                   <label for="numberPlate" className="form-label">
                     Number Plate
@@ -109,7 +109,7 @@ const AddBusType = ({ type }) => {
                     onChange={handleOnChange}
                   />
                 </div>
-               
+
                 <div className="col-md-6">
                   <label for="day" className="form-label">
                     Day
@@ -160,7 +160,7 @@ const AddBusType = ({ type }) => {
                     type="reset"
                     className="btn btn-warning"
                     onClick={resetValue}
-                    >
+                  >
                     Clear
                   </button>
                 </div>

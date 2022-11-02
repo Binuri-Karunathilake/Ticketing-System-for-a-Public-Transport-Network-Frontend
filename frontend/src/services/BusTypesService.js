@@ -17,6 +17,9 @@ class BusTypesService{
     deleteBusType(BusTypeId) {
         return axios.delete(API_URL+'BusTypes/'+BusTypeId);
     }
+    getBusType(id) {
+        return axios.get(API_URL+'BusTypes/'+id);
+    }
 }
 
 export default new BusTypesService()
