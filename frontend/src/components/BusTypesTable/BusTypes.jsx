@@ -2,10 +2,7 @@ import Swal
  from "sweetalert2";
 import BusTypesService from "../../services/BusTypesService";
 const BusType = ({BusType, index})=>{
-    console.log(BusType+"++++++++++++++++++++");
-
-
-    const deleteBusType = async() => {
+      const deleteBusType = async() => {
         try {
             Swal.fire({
               title: "Are you sure?",
