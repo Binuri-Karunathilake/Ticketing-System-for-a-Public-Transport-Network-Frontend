@@ -7,6 +7,7 @@ import AddBusRoute from './components/AddBussRoute/AddBusRoute';
 import RouteDetails from './components/RouteDetails/RouteDetails';
 import AddPayment from './components/payment/AddPayment';
 import RechargeAcc from './components/payment/RechargeAcc';
+import AboutUs from './components/AboutUs';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/busRoutes/details' element={<RouteDetails/>} />
         <Route path='/payment/add' element={<AddPayment/>} />
         <Route path='/payment/rechargeAcc' element={<RechargeAcc/>} />
+        <Route path='/aboutUs' element={<AboutUs/>}/>
       </Routes>
     </div>
   );
