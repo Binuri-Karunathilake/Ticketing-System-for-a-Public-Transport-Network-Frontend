@@ -23,12 +23,12 @@ const AdminDashborad = () => {
 
     <div className="MDBROW" style={{paddingTop:'1%' ,paddingLeft:'4%' ,paddingRight:'4%'}}>
         
-        <MDBRow  style={{paddingTop:'1%' ,paddingLeft:'4%' ,paddingRight:'4%'}}>
+        <MDBRow  style={{paddingTop:'4%' ,paddingLeft:'4%' ,paddingRight:'4%'}}>
 
         <MDBCol sm='3'>
-        <MDBCard className=" square border-bottom border-5 border-dark" style={{backgroundColor:'#2E8B57' , boxShadow:'2px 3px 5px #BBBBBB'}}>
-          <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center text-uppercase" style={{color:'white'}}>
-            <MDBIcon fas icon="fa-solid fa-route fa-lg text-white" /><br/> <span></span>
+        <MDBCard className=" " style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
+          <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center" style={{color:'white'}}>
+            <MDBIcon fas icon="fa-solid fa-route fa-lg text-black" /><br/> <span></span>
          </MDBCardHeader>
          <Link to="/BusRoutes" class="btn btn-primary">
          View Route
@@ -48,10 +48,10 @@ const AdminDashborad = () => {
           </div> */}
 
         <MDBCol sm='3'>
-        <MDBCard className=" square border-bottom border-5 border-dark " style={{backgroundColor:'#2E8B57' , boxShadow:'2px 3px 5px #BBBBBB'}}>
-          <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center text-uppercase" style={{color:'white'}}>
-            <MDBIcon fas icon="plus-circle text-white" />&nbsp;
-            <MDBIcon fas icon="fa-solid fa-route fa-lg text-white" /><br/>
+        <MDBCard className=" " style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
+          <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center" style={{color:'white'}}>
+            <MDBIcon fas icon="plus-circle text-black" />&nbsp;
+            <MDBIcon fas icon="fa-solid fa-route fa-lg text-black" /><br/>
          </MDBCardHeader>
          <Link to="/BusRoutes/add" class="btn btn-primary">
          Add Route
@@ -75,9 +75,9 @@ const AdminDashborad = () => {
           </div>
         </div> */}
          <MDBCol sm='3'>
-        <MDBCard className=" square border-bottom border-5 border-dark " style={{backgroundColor:'#2E8B57' , boxShadow:'2px 3px 5px #BBBBBB'}}>
-          <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center text-uppercase" style={{color:'white'}}>
-            <MDBIcon fas icon="fa-solid fa-bus fa-lg text-white" /><br/> <span></span>
+        <MDBCard className=" " style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
+          <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center" style={{color:'white'}}>
+            <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" /><br/> <span></span>
          </MDBCardHeader>
          <Link to="/BusTypes" class="btn btn-primary">
          View Bus Types
@@ -98,10 +98,10 @@ const AdminDashborad = () => {
           </div>
         </div> */}
  <MDBCol sm='3'>
-        <MDBCard className=" square border-bottom border-5 border-dark " style={{backgroundColor:'#2E8B57' , boxShadow:'2px 3px 5px #BBBBBB'}}>
-          <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center text-uppercase" style={{color:'white'}}>
-          <MDBIcon fas icon="plus-circle  text-white" />&nbsp;
-          <MDBIcon fas icon="fa-solid fa-bus fa-lg text-white" /><br/><span></span>
+        <MDBCard className=" " style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
+          <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center" style={{color:'white'}}>
+          <MDBIcon fas icon="plus-circle  text-black" />&nbsp;
+          <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" /><br/><span></span>
          </MDBCardHeader>
          <Link to="/BusTypes/add" class="btn btn-primary">
          Add Bus Types
