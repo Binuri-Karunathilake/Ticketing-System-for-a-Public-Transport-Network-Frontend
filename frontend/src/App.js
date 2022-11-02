@@ -17,6 +17,7 @@ import BusTypesTable from './components/BusTypesTable/BusTypesTable';
 import BeginBusJourney from './components/BeginBusJourney/BeginBusJourney';
 import BuyTicket from './components/BuyTicket/BuyTicket';
 import Login from './components/Login/login';
+import ContactUs from './components/ContactUs';
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
         <Route path='/payment/add' element={<AddPayment/>} />
         <Route path='/payment/rechargeAcc' element={<RechargeAcc/>} />
         <Route path='/aboutUs' element={<AboutUs/>}/>
+        <Route path='/contactUs' element={<ContactUs/>}/>
+        
+
+
         {/*Bus Types*/}        
         <Route path='/BusTypes' element={<BusTypesTable/>} />
         <Route path='/BusTypes/add' element={<AddBusType/>} />
