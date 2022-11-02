@@ -14,6 +14,7 @@ import BusTypesTable from './components/BusTypesTable/BusTypesTable';
 import BeginBusJourney from './components/BeginBusJourney/BeginBusJourney';
 import BuyTicket from './components/BuyTicket/BuyTicket';
 import Login from './components/Login/login';
+import UserDashborad from './components/User/UserDashboard';
 
 function App() {
   return (
@@ -27,11 +28,13 @@ function App() {
         {/*Bus Types*/}        
         <Route path='/BusTypes' element={<BusTypesTable/>} />
         <Route path='/BusTypes/add' element={<AddBusType/>} />
-        {/* Ticketing System         */}
+        {/* Ticketing System*/}
         <Route path='/BusJourney' element={<BeginBusJourney />} />
         <Route path='/BusJourney/ticket' element={<BuyTicket />} />
-        {/* Ticketing System         */}
+        {/* Login */}
         <Route path='/' element={<Login />} />
+        {/* user */}
+        <Route path='/UserDash' element={<UserDashborad/>} />
       </Routes>
     </div>
   );

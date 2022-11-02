@@ -135,15 +135,30 @@ const AddBusType = ({ type }) => {
                   <label for="day" className="form-label">
                     Day
                   </label>
-                  <input
+                  {/* <input
                     type="text"
                     required
                     className="form-control"
                     id="day"
-                    name="day"
-                    value={BusType.day}
-                    onChange={handleOnChange}
-                  />
+                    name="day" */}
+                 <select
+                 type="text"
+                 required
+                 className="form-control"
+                 id="day"
+                 name="day"
+                  value={BusType.day}
+                  onChange={handleOnChange}
+                  >
+                    <option value="">---</option>
+                    <option Value="Monday">Monday</option>
+                    <option Value="Tuesday">Tuesday</option>
+                    <option Value="Wednesday">Wednesday</option>
+                    <option Value="Thursday">Thursday</option>
+                    <option Value="Friday">Friday</option>
+                    <option Value="Saturday">Saturday</option>
+                    <option Value="Sunnday">Sunnday</option>
+                    </select>
                 </div>
                 <div className="col-md-6">
                   <label for="capacity" className="form-label">
