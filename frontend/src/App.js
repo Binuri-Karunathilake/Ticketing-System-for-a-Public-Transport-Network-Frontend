@@ -5,6 +5,8 @@ import { Route, Routes } from 'react-router-dom';
 import BusTypesService from './services/BusTypesService';
 import AddBusRoute from './components/AddBussRoute/AddBusRoute';
 import RouteDetails from './components/RouteDetails/RouteDetails';
+import AddPayment from './components/payment/AddPayment';
+import RechargeAcc from './components/payment/RechargeAcc';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path='/busTypes' element={<BusTypesService/>} />
         <Route path='/busRoutes/add' element={<AddBusRoute/>} />
         <Route path='/busRoutes/details' element={<RouteDetails/>} />
+        <Route path='/payment/add' element={<AddPayment/>} />
+        <Route path='/payment/rechargeAcc' element={<RechargeAcc/>} />
       </Routes>
     </div>
   );
