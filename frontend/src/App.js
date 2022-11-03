@@ -8,6 +8,9 @@ import BusRooutesTable from './components/BusRouteTable/BusRoutesTable';
 import { Route, Routes } from 'react-router-dom';
 import AddBusRoute from './components/AddBussRoute/AddBusRoute';
 import RouteDetails from './components/RouteDetails/RouteDetails';
+import AddPayment from './components/payment/AddPayment';
+import RechargeAcc from './components/payment/RechargeAcc';
+import AboutUs from './components/AboutUs';
 import AdminDashborad from './components/AdminDashboard/AdminDashborad';
 import AddBusType from './components/AddBusType/AddBusTypesComponent';
 import BusTypesTable from './components/BusTypesTable/BusTypesTable';
@@ -15,6 +18,7 @@ import BeginBusJourney from './components/BeginBusJourney/BeginBusJourney';
 import BuyTicket from './components/BuyTicket/BuyTicket';
 import Login from './components/Login/login';
 import UserDashborad from './components/User/UserDashboard';
+import ContactUs from './components/ContactUs';
 
 function App() {
   return (
@@ -25,6 +29,13 @@ function App() {
         <Route path='/busRoutes' element={<BusRooutesTable/>} />
         <Route path='/busRoutes/add' element={<AddBusRoute/>} />
         <Route path='/busRoutes/details' element={<RouteDetails/>} />
+        <Route path='/payment/add' element={<AddPayment/>} />
+        <Route path='/payment/rechargeAcc' element={<RechargeAcc/>} />
+        <Route path='/aboutUs' element={<AboutUs/>}/>
+        <Route path='/contactUs' element={<ContactUs/>}/>
+        
+
+
         {/*Bus Types*/}        
         <Route path='/BusTypes' element={<BusTypesTable/>} />
         <Route path='/BusTypes/add' element={<AddBusType/>} />
