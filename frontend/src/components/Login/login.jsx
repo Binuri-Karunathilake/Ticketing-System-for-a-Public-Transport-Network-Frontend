@@ -22,7 +22,9 @@ function Login() {
         icon: "success",
         confirmButtonText: "OK",
         type: "success",
-      });
+      }).then(()=>{
+        window.location="/UserDash"}
+        );
     } else {
       Swal.fire({
         title: "Error!",
