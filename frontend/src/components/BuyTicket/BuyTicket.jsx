@@ -63,18 +63,20 @@ const BuyTicket = () => {
   };
 
   useEffect(() => {
-    executeAsynchronously(
-      [
-        getBusType,
-        () => {
-          console.log(busType);
-          console.log("Hello World");
-        },
-        getRoute,
-      ],
-      10
-    );
-  }, [ticket]);
+    // executeAsynchronously(
+    //   [
+    //     getBusType,
+    //     () => {
+    //       console.log(busType);
+    //       console.log("Hello World");
+    //     },
+    //     getRoute,
+    //   ],
+    //   10
+    // );
+    getBusType();
+    getRoute();
+  }, []);
 
   // const getBusDetails = async () => {
   //   const bId = trip.busType;
