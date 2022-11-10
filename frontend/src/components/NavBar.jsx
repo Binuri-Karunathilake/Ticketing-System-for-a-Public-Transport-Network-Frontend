@@ -23,12 +23,13 @@ export default function NavBar() {
 
   return (
     <div className="fixed-top">
-    <MDBNavbar expand='lg' light  style={{ backgroundColor:'#C1E1C1'}}>
+    <MDBNavbar expand='lg' light  style={{ backgroundColor:'#309bf1'}}>
       <MDBContainer >
-      <MDBNavbarBrand className='text-dark' href='/AdminDashboard'><MDBIcon size='2x' fas icon="bus" />&nbsp;Journy <i>.lk</i></MDBNavbarBrand>
+      <MDBNavbarBrand className='text-dark' href='/AdminDashboard'>
+        <MDBIcon size='2x' fas icon="bus" />&nbsp;<b>Journy<i>.lk</i></b></MDBNavbarBrand>
           <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
           <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
+              <MDBNavbarLink className='text-muted' active aria-current='page' href='http://localhost:3000/'>
                 Home
               </MDBNavbarLink>
             </MDBNavbarItem>
@@ -103,7 +104,7 @@ export default function NavBar() {
             </MDBNavbarItem> 
             <MDBNavbarItem>
               <MDBNavbarLink active aria-current='page' href='#'>
-              <MDBBtn color='dark' outline className="shadow-0 btn-sm">LogOUt</MDBBtn>
+              <MDBBtn color='dark' outline className="shadow-0 btn-sm">LogOut</MDBBtn>
               </MDBNavbarLink>
             </MDBNavbarItem>
           </MDBNavbarNav>
