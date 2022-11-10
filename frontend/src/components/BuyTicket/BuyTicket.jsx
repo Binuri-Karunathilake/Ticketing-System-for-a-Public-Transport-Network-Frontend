@@ -1,8 +1,10 @@
+import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import BusRoutesServices from "../../services/BusRoutesServices";
 import BusTypesService from "../../services/BusTypesService";
+import QrReader from "react-qr-scanner";
 
 const BuyTicket = () => {
   const trip = JSON.parse(localStorage.getItem("tripDetails"));
@@ -25,36 +27,82 @@ const BuyTicket = () => {
   });
 
   const [route, setRoute] = useState({});
+  const [reader, setReader] = useState(false);
+
+  const getBusType = async () => {
+    const refBusType = await BusTypesService.getBusType(trip.busType);
+    console.log(refBusType);
+    setBusTypes(refBusType.data);
+  };
+
+  const getRoute = async () => {
+    const refRoute = await BusRoutesServices.getBusRoute(busType.route);
+    console.log(refRoute.data);
+    setRoute(refRoute.data);
+  };
+
+  function executeAsynchronously(functions, timeout) {
+    for (var i = 0; i < functions.length; i++) {
+      setTimeout(functions[i], timeout);
+    }
+  }
 
   const handleSubmit = () => {};
 
   const onChange = () => {};
 
-  const getBusDetails = async () => {
-    const bId = trip.busType;
-    const busT = await BusTypesService.getBusType(bId);
-    setBusTypes(busT.data);
-    await getRouteAndType();
+  const hanldeOnClick = () => {
+    setReader(!reader);
   };
 
-  const getRouteAndType = async () => {
-    const id = busType.id;
-    console.log(id);
-    const route = await BusRoutesServices.getBusRoute(id);
-    console.log(route.data);
-  };
+  const handleErrorFile = (error) => {};
 
-  const getRouteStopList = () => {
-    console.log(route);
-    const stopList = route.stopList.split(",");
-    console.log(stopList);
+  const handleScanFile = async (result) => {
+    if (result) {
+    }
   };
 
   useEffect(() => {
-    getBusDetails();
-    console.log(busType);
-    console.log(trip);
-  }, []);
+    executeAsynchronously(
+      [
+        getBusType,
+        () => {
+          console.log(busType);
+          console.log("Hello World");
+        },
+        getRoute,
+      ],
+      10
+    );
+  }, [ticket]);
+
+  // const getBusDetails = async () => {
+  //   const bId = trip.busType;
+  //   const busT = await BusTypesService.getBusType(bId);
+  //   setBusTypes(busT.data);
+  //   const routes = await getRouteAndType();
+  //   console.log(busT.data);
+  //   console.log(routes);
+  // };
+
+  // const getRouteAndType = async () => {
+  //   const id = busType.id;
+  //   console.log(id);
+  //   const route = await BusRoutesServices.getBusRoute(id);
+  //   console.log(route.data);
+  // };
+
+  // const getRouteStopList = () => {
+  //   console.log(route);
+  //   const stopList = route.stopList.split(",");
+  //   console.log(stopList);
+  // };
+
+  // useEffect(() => {
+  //   getBusDetails();
+  //   console.log(busType);
+  //   console.log(trip);
+  // }, []);
 
   return (
     <div>
@@ -87,6 +135,23 @@ const BuyTicket = () => {
             ></select>
           </div>
         </form>
+        <div className="">
+          {reader ? (
+            <QrReader
+              delay={300}
+              onError={handleErrorFile}
+              onScan={handleScanFile}
+              style={{
+                height: 240,
+                width: 320,
+              }}
+              className="qrReader"
+            />
+          ) : null}
+        </div>
+        <button onClick={hanldeOnClick} className="btn btn-primary">
+          Scan QR Code
+        </button>
       </div>
     </div>
   );
