@@ -1,13 +1,24 @@
 import axios from'axios';
+import { API_URL } from "../constants/CommonConstants";
 
-const BUSTYPES_API_BASE_URL = 'http://localhost:8090/api/v1/BusTypes';
+
+// const API_URL = 'http://localhost:8090/api/v1/BusTypes';
 
 class BusTypesService{
 
     getBusTypes(){
-        
-        return axios.get(BUSTYPES_API_BASE_URL);
+        return axios.get(API_URL+'BusTypes');
 
+    }
+
+    addBusType(BusType) {
+        return axios.post(API_URL+'BusTypes/AddType', BusType);
+    }
+    deleteBusType(BusTypeId) {
+        return axios.delete(API_URL+'BusTypes/'+BusTypeId);
+    }
+    getBusType(id) {
+        return axios.get(API_URL+'BusTypes/'+id);
     }
 }
 
