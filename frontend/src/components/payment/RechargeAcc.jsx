@@ -102,7 +102,7 @@ const RechargeAcc = ({ type }) => {
                     <button type="submit" className="btn btn-danger me-3">
                       Recharge 
                     </button>
-                    
+                    &nbsp;
                     
                     
                     <p> Note : Minimum amount to recharge is Rs.500. <br></br>Transaction fee of 2% will be collected towards payment gateway charges.</p>
