@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const UserGetQR = () => {
   const [qr, setQr] = useState("");
-  const id = "636d7121b7651793e7283122";
+  const id = localStorage.getItem("user");
 
   const generateQRCode = async () => {
     const ticketQRCode = await qrcode.toDataURL(id);
