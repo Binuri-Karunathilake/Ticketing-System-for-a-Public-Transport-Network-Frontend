@@ -6,11 +6,14 @@ import BusRoutesServices from "../../services/BusRoutesServices";
 import BusTypesService from "../../services/BusTypesService";
 import QrReader from "react-qr-scanner";
 import { toast, ToastContainer } from "react-toastify";
+import TicketServices from "../../services/TicketServices";
 
 const BuyTicket = () => {
   const { tripDetails, busTypes } = JSON.parse(
     localStorage.getItem("tripDetails")
   );
+
+  const userID = localStorage.getItem("user");
 
   console.log(busTypes);
   console.log(tripDetails);
@@ -65,7 +68,7 @@ const BuyTicket = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(ticket);
     const stop1 = getIndex(ticket.startStop);
@@ -94,6 +97,19 @@ const BuyTicket = () => {
         theme: "colored",
       });
       console.log({ ticket, price, route, userId });
+      try {
+        const newTicket = await TicketServices.addTicket({
+          ticket,
+          price,
+          route,
+          userId,
+        });
+        console.log("====================================");
+        console.log(newTicket);
+        console.log("====================================");
+      } catch (error) {
+        console.log(error);
+      }
       setScanned(false);
     }
   };
