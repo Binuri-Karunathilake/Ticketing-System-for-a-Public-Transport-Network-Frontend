@@ -68,6 +68,7 @@ const AddBusType = ({ type }) => {
     try {
       const routes1 = await BusRoutesServices.getBusRoutes();
       setRoutes(routes1.data);
+      console.log(routes1.data);
     } catch (error) {
       console.log(error);
     }
@@ -135,7 +136,13 @@ const AddBusType = ({ type }) => {
                   <label for="day" className="form-label">
                     Day
                   </label>
-                  <input
+                  {/* <input
+                    type="text"
+                    required
+                    className="form-control"
+                    id="day"
+                    name="day" */}
+                  <select
                     type="text"
                     required
                     className="form-control"
@@ -143,7 +150,16 @@ const AddBusType = ({ type }) => {
                     name="day"
                     value={BusType.day}
                     onChange={handleOnChange}
-                  />
+                  >
+                    <option value="">---</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunnday">Sunnday</option>
+                  </select>
                 </div>
                 <div className="col-md-6">
                   <label for="capacity" className="form-label">
@@ -174,7 +190,7 @@ const AddBusType = ({ type }) => {
                   >
                     <option defaultChecked>---</option>
                     {routes.map((route, index) => {
-                      return <option value={route.id}>{route.name}</option>;
+                      return <option value={route._id}>{route.name}</option>;
                     })}
                   </select>
                 </div>

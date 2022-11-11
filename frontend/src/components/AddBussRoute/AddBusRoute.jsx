@@ -111,7 +111,12 @@ const AddBusRoute = ({ type }) => {
                     placeholder="1234 Main St"
                     name="stopList"
                     value={route.stopList}
-                    onChange={handleOnChange}
+                    onChange={(e) => {
+                      setRoute({
+                        ...route,
+                        stopList: e.target.value.split(","),
+                      });
+                    }}
                   />
                 </div>
                 <div className="col-12">

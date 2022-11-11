@@ -11,101 +11,6 @@ function Login() {
     window.location.href = "/student/Reg";
   }
 
-  async function login(e) {
-    e.preventDefault();
-
-    let item = { username, password };
-    let result = await fetch("http://localhost:5000/user/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(item),
-    });
-    result = await result.json();
-    console.log(JSON.stringify(result.message));
-    if (JSON.stringify(result.message) === '"Admin"') {
-      Cookies.set("user_name", username, { expires: 70000, path: "" });
-
-      Swal.fire({
-        title: "Success!",
-        text: "Login Success",
-        icon: "success",
-        confirmButtonText: "OK",
-        type: "success",
-      }).then((okay) => {
-        if (okay) {
-          window.location.href = "/admin/AdminDashboard";
-        }
-      });
-    } else if (JSON.stringify(result.message) === '"Team"') {
-      Cookies.set("user_name", username, { expires: 70000, path: "" });
-
-      Swal.fire({
-        title: "Success!",
-        text: "Login Success",
-        icon: "success",
-        confirmButtonText: "OK",
-        type: "success",
-      }).then((okay) => {
-        if (okay) {
-          window.location.href = "/student/TeamDashboard";
-        }
-      });
-    } else if (JSON.stringify(result.message) === '"Supervisor"') {
-      Cookies.set("user_name", username, { expires: 70000, path: "" });
-
-      Swal.fire({
-        title: "Success!",
-        text: "Login Success",
-        icon: "success",
-        confirmButtonText: "OK",
-        type: "success",
-      }).then((okay) => {
-        if (okay) {
-          window.location.href = "/admin/SupervisorDashboard";
-        }
-      });
-    } else if (JSON.stringify(result.message) === '"Co-Supervisor"') {
-      Cookies.set("user_name", username, { expires: 70000, path: "" });
-
-      Swal.fire({
-        title: "Success!",
-        text: "Login Success",
-        icon: "success",
-        confirmButtonText: "OK",
-        type: "success",
-      }).then((okay) => {
-        if (okay) {
-          window.location.href = "/admin/SupervisorDashboard";
-        }
-      });
-    } else if (JSON.stringify(result.message) === '"Panel Member"') {
-      Cookies.set("user_name", username, { expires: 70000, path: "" });
-
-      Swal.fire({
-        title: "Success!",
-        text: "Login Success",
-        icon: "success",
-        confirmButtonText: "OK",
-        type: "success",
-      }).then((okay) => {
-        if (okay) {
-          window.location.href = "/panel/PanelDashboard";
-        }
-      });
-    } else {
-      Swal.fire({
-        title: "Error!",
-        text: "Login Not Success",
-        icon: "error",
-        confirmButtonText: "OK",
-        type: "success",
-      });
-    }
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username === "Admin" && password === "Admin") {
@@ -117,7 +22,9 @@ function Login() {
         icon: "success",
         confirmButtonText: "OK",
         type: "success",
-      });
+      }).then(()=>{
+        window.location="/UserDash"}
+        );
     } else {
       Swal.fire({
         title: "Error!",

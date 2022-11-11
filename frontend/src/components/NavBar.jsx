@@ -23,21 +23,22 @@ export default function NavBar() {
 
   return (
     <div className="fixed-top">
-    <MDBNavbar expand='lg' light  style={{ backgroundColor:'#C1E1C1'}}>
+    <MDBNavbar expand='lg' light  style={{ backgroundColor:'#0DCAF0'}}>
       <MDBContainer >
-      <MDBNavbarBrand className='text-dark' href='/AdminDashboard'><MDBIcon size='2x' fas icon="bus" />&nbsp;Journy <i>.lk</i></MDBNavbarBrand>
+      <MDBNavbarBrand className='text-dark' href='/AdminDashboard'>
+        <MDBIcon size='2x' fas icon="bus" />&nbsp;<b>Journy<i>.lk</i></b></MDBNavbarBrand>
           <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
           <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
+              <MDBNavbarLink className='text-dark' active aria-current='page' href='/UserDash'>
                 Home
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
+              <MDBNavbarLink className='text-muted' active aria-current='page' href='/aboutUs'>
                 About Us
               </MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
+            {/* <MDBNavbarItem>
               <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
                 Services
               </MDBNavbarLink>
@@ -46,9 +47,9 @@ export default function NavBar() {
               <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
                 Careers
               </MDBNavbarLink>
-            </MDBNavbarItem>
+            </MDBNavbarItem> */}
             <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
+              <MDBNavbarLink className='text-muted' active aria-current='page' href='contactUs'>
                 Contact Us
               </MDBNavbarLink>
             </MDBNavbarItem>
@@ -97,13 +98,13 @@ export default function NavBar() {
         <MDBCollapse navbar show={showNavRight}>
           <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
             <MDBNavbarItem className='pt-1'>
-              <MDBNavbarLink active aria-current='page' href='#'>
+              <MDBNavbarLink active aria-current='page' href='http://localhost:3000/'>
                 <MDBIcon size='1x' fas icon="user-alt" />
               </MDBNavbarLink>
             </MDBNavbarItem> 
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='#'>
-              <MDBBtn color='dark' outline className="shadow-0 btn-sm">LogOUt</MDBBtn>
+              <MDBNavbarLink active aria-current='page' href='http://localhost:3000/'>
+              <MDBBtn color='dark' outline className="shadow-0 btn-sm">LogOut</MDBBtn>
               </MDBNavbarLink>
             </MDBNavbarItem>
           </MDBNavbarNav>

@@ -7,18 +7,18 @@ import { API_URL } from "../constants/CommonConstants";
 class BusTypesService{
 
     getBusTypes(){
-        return axios.get(API_URL+'BusTypes');
+        return axios.get(API_URL+'busTypes');
 
     }
 
     addBusType(BusType) {
-        return axios.post(API_URL+'BusTypes/AddType', BusType);
+        return axios.post(API_URL+'busTypes', BusType);
     }
     deleteBusType(BusTypeId) {
-        return axios.delete(API_URL+'BusTypes/'+BusTypeId);
+        return axios.delete(API_URL+'busTypes/'+BusTypeId);
     }
     getBusType(id) {
-        return axios.get(API_URL+'BusTypes/'+id);
+        return axios.get(API_URL+'busTypes/'+id);
     }
 }
 

@@ -32,7 +32,10 @@ const BeginBusJourney = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(tripDetails);
-    localStorage.setItem("tripDetails", JSON.stringify(tripDetails));
+    localStorage.setItem(
+      "tripDetails",
+      JSON.stringify({ tripDetails, busTypes })
+    );
     window.location = "/BusJourney/ticket";
   };
 
@@ -73,7 +76,7 @@ const BeginBusJourney = () => {
               onChange={handleOnChange}
             >
               {busTypes.map((type, index) => {
-                return <option value={type.id}>{type.name}</option>;
+                return <option value={type._id}>{type.name}</option>;
               })}
             </select>
           </div>
