@@ -16,7 +16,7 @@ const BusRoute = ({ route, index }) => {
         confirmButtonText: "Yes, delete it!",
       }).then(async (result) => {
         if (result.isConfirmed) {
-          const reply = await BusRoutesServices.deleteBusRoute(route.id);
+          const reply = await BusRoutesServices.deleteBusRoute(route._id);
           console.log(reply);
           Swal.fire("Deleted!", "Your file has been deleted.", "success");
           window.location.reload(false);

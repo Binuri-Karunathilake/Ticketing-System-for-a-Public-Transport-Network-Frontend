@@ -20,13 +20,13 @@ import Login from './components/Login/login';
 import UserDashborad from './components/User/UserDashboard';
 import ContactUs from './components/ContactUs';
 import UserGetQR from './components/UserGetQR/UserGetQR';
-
+import userReg from './components/Register/user_reg';
+import RegDashboard from './components/Register/user_reg';
 function App() {
   return (
     <>
     <div className="container">
       <Routes>
-        <Route path='/Dashboard' element={<AdminDashborad/>} />
         {/*Bus Routes*/}
         <Route path='/busRoutes' element={<BusRooutesTable/>} />
         <Route path='/busRoutes/add' element={<AddBusRoute/>} />
@@ -35,9 +35,8 @@ function App() {
         <Route path='/payment/rechargeAcc' element={<RechargeAcc/>} />
         <Route path='/aboutUs' element={<AboutUs/>}/>
         <Route path='/contactUs' element={<ContactUs/>}/>
-        
-
-
+        <Route path='/register' element={<RegDashboard/>} />
+        {/* <Route path='/userReg' element={<userReg/>}/> */}
         {/*Bus Types*/}        
         <Route path='/BusTypes' element={<BusTypesTable/>} />
         <Route path='/BusTypes/add' element={<AddBusType/>} />
@@ -53,6 +52,8 @@ function App() {
     </div>
     <Routes>
     <Route path='/UserDash' element={<UserDashborad/>} />
+    <Route path='/Dashboard' element={<AdminDashborad/>} />
+
 
     </Routes>
     </>
