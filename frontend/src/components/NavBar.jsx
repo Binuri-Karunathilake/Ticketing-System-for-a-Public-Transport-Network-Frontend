@@ -98,12 +98,12 @@ export default function NavBar() {
         <MDBCollapse navbar show={showNavRight}>
           <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
             <MDBNavbarItem className='pt-1'>
-              <MDBNavbarLink active aria-current='page' href='#'>
+              <MDBNavbarLink active aria-current='page' href='http://localhost:3000/'>
                 <MDBIcon size='1x' fas icon="user-alt" />
               </MDBNavbarLink>
             </MDBNavbarItem> 
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='#'>
+              <MDBNavbarLink active aria-current='page' href='http://localhost:3000/'>
               <MDBBtn color='dark' outline className="shadow-0 btn-sm">LogOut</MDBBtn>
               </MDBNavbarLink>
             </MDBNavbarItem>

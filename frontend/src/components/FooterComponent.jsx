@@ -114,9 +114,8 @@ export const Footer = () => {
       </section>
 
       <div className='text-center text-white p-4'  style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-        © 2021 Copyright:
-        <a className='text-white fw-bold' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
+        © 2021 Copyright :  
+        <a className='text-white fw-bold' href='#'>  Hexclan
         </a>
       </div>
     </MDBFooter>
