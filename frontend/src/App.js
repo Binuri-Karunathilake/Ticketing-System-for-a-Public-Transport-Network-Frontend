@@ -20,6 +20,7 @@ import Login from './components/Login/login';
 import UserDashborad from './components/User/UserDashboard';
 import ContactUs from './components/ContactUs';
 import UserGetQR from './components/UserGetQR/UserGetQR';
+import Safety from './components/Safety';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
         <Route path='/payment/rechargeAcc' element={<RechargeAcc/>} />
         <Route path='/aboutUs' element={<AboutUs/>}/>
         <Route path='/contactUs' element={<ContactUs/>}/>
-        
+        <Route path='/safety' element={<Safety/>}/>
 
 
         {/*Bus Types*/}        

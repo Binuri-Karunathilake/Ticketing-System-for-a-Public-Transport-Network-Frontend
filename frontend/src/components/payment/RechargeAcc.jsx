@@ -61,27 +61,24 @@ const RechargeAcc = ({ type }) => {
         />
         <div className="card m-4 p-5 shadow bg-body rounded border-0">
           <div class="card-header mb-4">
-            <h2 class="card-title">
+            <h4 class="card-title">
                 Recharge Your Account
-            </h2>
+            </h4>
           </div>
           <div className="card-body pt-0">
             <div className="row">
               <div className="col">
                 <form className="row g-3" >
                   <div className="col-md-6">
-                    <label for="name" className="form-label">
-                      Select Payment Type
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      id="name"
-                      name="name"
-                      value={route.name}
-                      onChange={handleOnChange}
-                    />
+                  <label for="ticketPrice" className="form-label">
+                    Select card type
+                  </label>
+                  <select class="form-select" aria-label="Default select example">
+                      <option selected>Select</option>
+                      <option value="1">Credit Card</option>
+                      <option value="2">Debit Card</option>
+                  </select>
+                <br></br>
                 <div className="col-md-6">
                   <label for="ticketPrice" className="form-label">
                     Recharge Amount
@@ -99,10 +96,11 @@ const RechargeAcc = ({ type }) => {
                 </div>
                   </div>
                   <div className="col-12">
-                    <button type="submit" className="btn btn-danger me-3">
+                    <button type="submit" className="btn btn-success me-3">
                       Recharge 
                     </button>
-                    &nbsp;
+                    <br></br><br></br>
+            
                     
                     
                     <p> Note : Minimum amount to recharge is Rs.500. <br></br>Transaction fee of 2% will be collected towards payment gateway charges.</p>
