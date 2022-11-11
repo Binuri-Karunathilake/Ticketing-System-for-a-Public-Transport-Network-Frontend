@@ -27,15 +27,20 @@ const Safety = () => {
 // </footer>
 // </div>
 // </body>
-<div class="container py-4">
+ <div class="container py-4 card-img-overlay">
+<img src="https://img.freepik.com/free-photo/smiling-businessman-listening-music-with-eyes-closed-while-commuting-by-public-transport_637285-12126.jpg?w=1480&t=st=1668198032~exp=1668198632~hmac=0f0778c509ba7d29e5b3f94f50a9777335c7e3e9b0b3eb1343c68a49daaeb343" class="card-img" alt="..."></img>
 
-<div class="p-5 mb-4 bg-light rounded-3">
-  <div class="container-fluid py-5">
+<div class="p-5 mb-4 bg-light rounded-3 ">
+<br></br>
+    <center>
+
     <h1 class="display-5 fw-bold">Stay awake and alert at all times</h1>
-    <p class="col-md-8 fs-4">You may be tempted to read a book, check your messages, or take a quick nap on public transportation, but that’s the perfect way to have your wallet, camera, backpack and other stuff stolen. Plus, you could end up in a strange place at the end of the bus line with no way to get back if you sleep too long!
+    <p class="col-md-12 fs-4">You may be tempted to read a book, check your messages, or take a quick nap on public transportation, but that’s the perfect way to have your wallet, camera, backpack and other stuff stolen. Plus, you could end up in a strange place at the end of the bus line with no way to get back if you sleep too long!
     <br></br><br></br>Stay awake and alert no matter how tired you are. This is true when you’re in a taxi as well – your driver could be just as dangerous as a common criminal.</p>
-  </div>
+    </center>
+  
 </div>
+
 
 <div class="row align-items-md-stretch">
   <div class="col-md-6">
