@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 //import HomePageNav from '../navbars/homePageNav';
 import Swal from "sweetalert2";
 import Cookies from "js-cookie";
+import UserServices from "../../services/UserServices";
 
 function Login() {
   const [username, setUserName] = useState("");
@@ -13,26 +14,42 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (username === "Admin" && password === "Admin") {
-      window.location = "/Dashboard";
-    } else if (username === "User" && password === "User") {
+      localStorage.setItem("admin", true);
       Swal.fire({
         title: "Success!",
         text: "Login Success",
         icon: "success",
         confirmButtonText: "OK",
         type: "success",
-      }).then(()=>{
-        window.location="/UserDash"}
-        );
-    } else {
-      Swal.fire({
-        title: "Error!",
-        text: "Login Not Success",
-        icon: "error",
-        confirmButtonText: "OK",
-        type: "success",
+      }).then(() => {
+        window.location = "/Dashboard";
       });
+    } else {
+      UserServices.userLogin({ username, password })
+        .then((refUser) => {
+          console.log(refUser);
+          localStorage.setItem("user", refUser.data.data.id);
+          Swal.fire({
+            title: "Success!",
+            text: "Login Success",
+            icon: "success",
+            confirmButtonText: "OK",
+            type: "success",
+          }).then(() => {
+            window.location = "/UserDash";
+          });
+        })
+        .catch(() => {
+          Swal.fire({
+            title: "Error!",
+            text: "Login Not Success",
+            icon: "error",
+            confirmButtonText: "OK",
+            type: "success",
+          });
+        });
     }
   };
 
