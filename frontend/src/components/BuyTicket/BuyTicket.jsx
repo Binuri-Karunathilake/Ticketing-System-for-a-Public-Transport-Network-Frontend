@@ -42,7 +42,7 @@ const BuyTicket = () => {
   const [ticket, setTicket] = useState({
     startStop: "",
     endStop: "",
-    ticketPrice: "",
+    ticketPrice: 0,
     routeName: "",
     userId: "",
   });
@@ -76,11 +76,11 @@ const BuyTicket = () => {
       const unitPrice = route.ticketPrice / route.stopList.length;
       const stopLen = Math.abs(stop1 - stop2);
 
-      const price = unitPrice * stopLen;
-      setTicket({ ...ticket, ticketPrice: price });
+      const price = (unitPrice*stopLen);
+      setTicket({ ...ticket, ticketPrice:price });
       setTicket({ ...ticket, routeName: route.name });
-      console.log(route.ticketPrice / route.stopList.length);
-      console.log(Math.abs(stop1 - stop2));
+      console.log(price + " == " + unitPrice + " == " + stopLen + " == " +  route.name);
+      console.log(route);
       console.log(ticket);
     }
   };
