@@ -10,8 +10,12 @@ class TicketServices{
         return axios.post(API_URL+'ticket', ticket);
     }
 
-    getAllTickets(user) {
+    getAllTickets() {
         return axios.get(API_URL+'ticket');
+    }
+
+    getUsersTickets(user) {
+        return axios.get(API_URL+'ticket/'+user);
     }
 }
 

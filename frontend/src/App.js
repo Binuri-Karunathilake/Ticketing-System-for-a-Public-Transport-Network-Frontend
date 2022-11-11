@@ -22,6 +22,8 @@ import ContactUs from './components/ContactUs';
 import UserGetQR from './components/UserGetQR/UserGetQR';
 import userReg from './components/Register/user_reg';
 import RegDashboard from './components/Register/user_reg';
+import AdminTicketTable from './components/AdminTicketTable/AdminTicketTable';
+import UserTicket from './components/UserTickets/UserTicket';
 function App() {
   return (
     <>
@@ -43,10 +45,12 @@ function App() {
         {/* Ticketing System*/}
         <Route path='/BusJourney' element={<BeginBusJourney />} />
         <Route path='/BusJourney/ticket' element={<BuyTicket />} />
+        <Route path='/tickets' element={<AdminTicketTable />} />
         {/* Login */}
         <Route path='/' element={<Login />} />
         {/* user */}
         <Route path='/UserReadQR' element={<UserGetQR/>} />
+        <Route path='/UserTickets' element={<UserTicket/>} />
 
       </Routes>
     </div>
