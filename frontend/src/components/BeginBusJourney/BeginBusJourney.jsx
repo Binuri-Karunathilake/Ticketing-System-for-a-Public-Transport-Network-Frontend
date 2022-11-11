@@ -59,7 +59,10 @@ const BeginBusJourney = () => {
   console.log(busTypes);
 
   return (
-    <div>
+    <div className="card p-4 mt-5">
+      <div className="card-head">
+        <h4>Start Journey</h4>
+      </div>
       <div className="row">
         <form className="row g-3" onSubmit={handleSubmit}>
           <div className="col-md-6">

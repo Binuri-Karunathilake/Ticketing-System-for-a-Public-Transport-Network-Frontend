@@ -5,6 +5,7 @@ import { useState } from "react";
 import BusRoutesServices from "../../services/BusRoutesServices";
 import BusTypesService from "../../services/BusTypesService";
 import QrReader from "react-qr-scanner";
+import { toast, ToastContainer } from "react-toastify";
 
 const BuyTicket = () => {
   const { tripDetails, busTypes } = JSON.parse(
@@ -42,8 +43,6 @@ const BuyTicket = () => {
   const [ticket, setTicket] = useState({
     startStop: "",
     endStop: "",
-    ticketPrice: 0,
-    routeName: "",
     userId: "",
   });
 
@@ -55,6 +54,8 @@ const BuyTicket = () => {
   });
 
   const [reader, setReader] = useState(false);
+  const [scanned, setScanned] = useState(false);
+  const [userId, setUserId] = useState("");
 
   const getIndex = (stop) => {
     for (let key in route.stopList) {
@@ -76,12 +77,24 @@ const BuyTicket = () => {
       const unitPrice = route.ticketPrice / route.stopList.length;
       const stopLen = Math.abs(stop1 - stop2);
 
-      const price = (unitPrice*stopLen);
-      setTicket({ ...ticket, ticketPrice:price });
+      const price = unitPrice * stopLen;
+      setTicket({ ...ticket, ticketPrice: price });
       setTicket({ ...ticket, routeName: route.name });
-      console.log(price + " == " + unitPrice + " == " + stopLen + " == " +  route.name);
-      console.log(route);
-      console.log(ticket);
+      console.log(
+        price + " == " + unitPrice + " == " + stopLen + " == " + route.name
+      );
+      toast.success("Ticket bought successfully", {
+        position: "top-center",
+        autoClose: 500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      console.log({ ticket, price, route, userId });
+      setScanned(false);
     }
   };
 
@@ -97,15 +110,38 @@ const BuyTicket = () => {
 
   const handleScanFile = async (result) => {
     if (result) {
+      setScanned(true);
+      setUserId(result.text);
+      setReader(false);
     }
+  };
+
+  const endJourney = () => {
+    localStorage.removeItem("tripDetails");
+    window.location = "/Dashboard";
   };
 
   useEffect(() => {
     getRouteDetails();
-  }, []);
+  }, [ticket]);
 
   return (
-    <div>
+    <div className="card p-3 mt-5">
+      <div className="card-header mb-3">
+        <h4>Buy Ticket</h4>
+      </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <div className="row">
         <form onSubmit={handleSubmit}>
           <div className="col-6">
@@ -146,11 +182,28 @@ const BuyTicket = () => {
               })}
             </select>
           </div>
-          <button type="submit" className="btn btn-primary">
-            Buy Ticket
+          {scanned ? (
+            <button type="submit" className="btn btn-primary mx-3 mt-3">
+              Buy Ticket
+            </button>
+          ) : (
+            <button
+              type="submit"
+              disabled
+              className="btn btn-primary mx-3 mt-3"
+            >
+              Buy Ticket
+            </button>
+          )}
+          <button
+            onClick={hanldeOnClick}
+            type="button"
+            className="btn btn-primary ml-3 mt-3"
+          >
+            Scan QR Code
           </button>
         </form>
-        <div className="">
+        <div className="mt-5">
           {reader ? (
             <QrReader
               delay={300}
@@ -164,8 +217,14 @@ const BuyTicket = () => {
             />
           ) : null}
         </div>
-        <button onClick={hanldeOnClick} className="btn btn-primary">
-          Scan QR Code
+      </div>
+      <div className="row d-flex justify-content-center">
+        <button
+          onClick={endJourney}
+          type="button"
+          className="btn btn-success ml-3 mt-3 col-2"
+        >
+          End Journey {">>"}
         </button>
       </div>
     </div>
