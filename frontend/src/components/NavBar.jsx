@@ -95,6 +95,8 @@ export default function NavBar() {
           <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
 
+       
+
         <MDBCollapse navbar show={showNavRight}>
           <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
             <MDBNavbarItem className='pt-1'>
@@ -109,6 +111,10 @@ export default function NavBar() {
             </MDBNavbarItem>
           </MDBNavbarNav>
         </MDBCollapse>
+        <form className='d-flex input-group w-auto'>
+            <input type='search' className='form-control ' style={{backgroundColor:'#f7f9fa'}} placeholder='Search..' aria-label='Search' />
+            <MDBBtn color='dark' className="shadow-0">Search</MDBBtn>
+          </form>
       </MDBContainer>
     </MDBNavbar>  
     {/* <MDBNavbar expand='lg' light bgColor='white'>
