@@ -47,10 +47,14 @@ function App() {
         {/* Login */}
         <Route path='/' element={<Login />} />
         {/* user */}
-        <Route path='/UserDash' element={<UserDashborad/>} />
         <Route path='/UserReadQR' element={<UserGetQR/>} />
+
       </Routes>
     </div>
+    <Routes>
+    <Route path='/UserDash' element={<UserDashborad/>} />
+
+    </Routes>
     </>
   );
 }
