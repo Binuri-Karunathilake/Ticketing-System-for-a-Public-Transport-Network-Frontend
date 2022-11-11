@@ -29,7 +29,7 @@ const BusType = ({ BusType, index }) => {
       <td>{BusType.numberPlate}</td>
       <td>{BusType.day}</td>
       <td>{BusType.capacity}</td>
-      <td>{BusType.route}</td>
+      <td>{BusType.routeName}</td>
 
       <td>
         <button className="btn btn-danger" onClick={deleteBusType}>

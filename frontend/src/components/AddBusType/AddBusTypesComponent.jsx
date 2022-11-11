@@ -158,7 +158,7 @@ const AddBusType = ({ type }) => {
                     <option value="Thursday">Thursday</option>
                     <option value="Friday">Friday</option>
                     <option value="Saturday">Saturday</option>
-                    <option value="Sunnday">Sunnday</option>
+                    <option value="Sunday">Sunnday</option>
                   </select>
                 </div>
                 <div className="col-md-6">
@@ -190,7 +190,16 @@ const AddBusType = ({ type }) => {
                   >
                     <option defaultChecked>---</option>
                     {routes.map((route, index) => {
-                      return <option value={route._id}>{route.name}</option>;
+                      return (
+                        <option
+                          value={JSON.stringify({
+                            route: route._id,
+                            name: route.name,
+                          })}
+                        >
+                          {route.name}
+                        </option>
+                      );
                     })}
                   </select>
                 </div>
