@@ -2,7 +2,7 @@ import React from 'react';
 import{BrowserRouter as Router}from 'react-router-dom';
 // import { Routes,Route } from 'react-router';
 import './App.css';
-import FooterComponent from './components/FooterComponent';
+import FooterComponent, { Footer } from './components/FooterComponent';
 import HeaderComponent from './components/HeaderComponent';
 import BusRooutesTable from './components/BusRouteTable/BusRoutesTable';
 import { Route, Routes } from 'react-router-dom';
@@ -19,9 +19,11 @@ import BuyTicket from './components/BuyTicket/BuyTicket';
 import Login from './components/Login/login';
 import UserDashborad from './components/User/UserDashboard';
 import ContactUs from './components/ContactUs';
+import UserGetQR from './components/UserGetQR/UserGetQR';
 
 function App() {
   return (
+    <>
     <div className="container">
       <Routes>
         <Route path='/Dashboard' element={<AdminDashborad/>} />
@@ -45,9 +47,15 @@ function App() {
         {/* Login */}
         <Route path='/' element={<Login />} />
         {/* user */}
-        <Route path='/UserDash' element={<UserDashborad/>} />
+        <Route path='/UserReadQR' element={<UserGetQR/>} />
+
       </Routes>
     </div>
+    <Routes>
+    <Route path='/UserDash' element={<UserDashborad/>} />
+
+    </Routes>
+    </>
   );
 }
 

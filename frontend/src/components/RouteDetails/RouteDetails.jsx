@@ -9,16 +9,7 @@ import { useLocation } from "react-router-dom";
 import StopDetails from "./StopDetails";
 
 const RouteDetails = () => {
-  const [stopList, setStopList] = useState([
-    "Kandy",
-    "Mahaiyawa",
-    "Mavilmada",
-    "Katugasthota",
-    "Nawayalathenna",
-    "Polgolla",
-    "Madawala",
-    "Wattegama",
-  ]);
+  const [stopList, setStopList] = useState([]);
 
   const location = useLocation();
 
@@ -29,14 +20,6 @@ const RouteDetails = () => {
     ticketPrice: 0,
     stopList: "",
   });
-
-  useEffect(() => {
-    if (route) {
-      console.log(route);
-      setRouteDetails(route);
-      setStopList(routeDetails.stopList.split(","));
-    }
-  }, [route, routeDetails]);
 
   console.log(route);
 
@@ -68,11 +51,11 @@ const RouteDetails = () => {
                     <table className="table ">
                       <tr>
                         <td>Route name : </td>
-                        <td>{routeDetails.name}</td>
+                        <td>{route.name}</td>
                       </tr>
                       <tr>
                         <td>Ticket Price :</td>
-                        <td>Rs.{routeDetails.ticketPrice}</td>
+                        <td>Rs.{route.ticketPrice}</td>
                       </tr>
                     </table>
                   </div>
@@ -93,7 +76,7 @@ const RouteDetails = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {stopList.map((details, index) => {
+                    {route.stopList.map((details, index) => {
                       return <StopDetails details={details} index={index} />;
                     })}
                   </tbody>

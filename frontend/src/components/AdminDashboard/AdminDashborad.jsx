@@ -33,7 +33,7 @@ const AdminDashborad = () => {
           <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center" style={{color:'white'}}>
             <MDBIcon fas icon="fa-solid fa-route fa-lg text-black" /><br/> <span></span>
          </MDBCardHeader>
-         <Link to="/BusRoutes" class="btn btn-primary">
+         <Link to="/BusRoutes" class="btn btn-info">
          View Route
             </Link>
        </MDBCard>
@@ -52,10 +52,14 @@ const AdminDashborad = () => {
         <MDBCol sm='3'>
         <MDBCard className=" " style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
           <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center" style={{color:'white'}}>
+
+          
             <MDBIcon fas icon="plus-circle text-black" />&nbsp;
             <MDBIcon fas icon="fa-solid fa-route fa-lg text-black" /><br/>
+
+          
          </MDBCardHeader>
-         <Link to="/BusRoutes/add" class="btn btn-primary">
+         <Link to="/BusRoutes/add" class="btn btn-info">
          Add Route
             </Link>
        </MDBCard>
@@ -79,11 +83,12 @@ const AdminDashborad = () => {
           <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center" style={{color:'white'}}>
             <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" /><br/> <span></span>
          </MDBCardHeader>
-         <Link to="/BusTypes" class="btn btn-primary">
+         <Link to="/BusTypes" class="btn btn-info">
          View Bus Types
             </Link>
        </MDBCard>
         </MDBCol>
+
         {/* <div class="card">
           <div class="card-header">Featured</div>
           <div class="card-body">
@@ -97,14 +102,14 @@ const AdminDashborad = () => {
             </Link>
           </div>
         </div> */}
- <MDBCol sm='3'>
+
+<MDBCol sm='3'>
         <MDBCard className=" " style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
           <MDBCardHeader className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center" style={{color:'white'}}>
           <MDBIcon fas icon="plus-circle  text-black" />&nbsp;
           <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" /><br/><span></span>
          </MDBCardHeader>
-         <Link to="/BusTypes/add" class="btn btn-primary">
-         Add Bus Types
+         <Link to="/BusTypes/add" class="btn btn-info">Add Bus Types
             </Link>
        </MDBCard>
         </MDBCol>
@@ -123,6 +128,16 @@ const AdminDashborad = () => {
             </Link>
             </div>
           </div> */}
+
+
+
+
+
+
+
+
+
+          
         </MDBRow>
       </div>
     </div>

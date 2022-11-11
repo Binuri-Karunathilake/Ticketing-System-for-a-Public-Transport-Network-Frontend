@@ -7,7 +7,28 @@ import BusTypesService from "../../services/BusTypesService";
 import QrReader from "react-qr-scanner";
 
 const BuyTicket = () => {
-  const trip = JSON.parse(localStorage.getItem("tripDetails"));
+  const { tripDetails, busTypes } = JSON.parse(
+    localStorage.getItem("tripDetails")
+  );
+
+  console.log(busTypes);
+  console.log(tripDetails);
+
+  const getBusType = () => {
+    for (let key in busTypes) {
+      if (busTypes[key]._id === tripDetails.busType) {
+        return busTypes[key];
+      }
+    }
+  };
+
+  console.log(getBusType());
+
+  const getRouteDetails = async () => {
+    const refRoute = await BusRoutesServices.getBusRoute(getBusType().route);
+    setRoute(refRoute.data);
+    console.log(refRoute.data);
+  };
 
   const [busType, setBusTypes] = useState({
     id: "",
@@ -21,35 +42,52 @@ const BuyTicket = () => {
   const [ticket, setTicket] = useState({
     startStop: "",
     endStop: "",
-    ticketPrice: "",
+    ticketPrice: 0,
     routeName: "",
     userId: "",
   });
 
-  const [route, setRoute] = useState({});
+  const [route, setRoute] = useState({
+    stopList: [],
+    name: "",
+    _id: "",
+    ticketPrice: 0,
+  });
+
   const [reader, setReader] = useState(false);
 
-  const getBusType = async () => {
-    const refBusType = await BusTypesService.getBusType(trip.busType);
-    console.log(refBusType);
-    setBusTypes(refBusType.data);
-  };
-
-  const getRoute = async () => {
-    const refRoute = await BusRoutesServices.getBusRoute(busType.route);
-    console.log(refRoute.data);
-    setRoute(refRoute.data);
-  };
-
-  function executeAsynchronously(functions, timeout) {
-    for (var i = 0; i < functions.length; i++) {
-      setTimeout(functions[i], timeout);
+  const getIndex = (stop) => {
+    for (let key in route.stopList) {
+      if (route.stopList[key] === stop) {
+        return key;
+      }
     }
-  }
+  };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(ticket);
+    const stop1 = getIndex(ticket.startStop);
+    const stop2 = getIndex(ticket.endStop);
+    const length = route.stopList.length;
+    if (ticket.endStop === ticket.startStop) {
+      console.log("Error");
+    } else {
+      const unitPrice = route.ticketPrice / route.stopList.length;
+      const stopLen = Math.abs(stop1 - stop2);
 
-  const onChange = () => {};
+      const price = (unitPrice*stopLen);
+      setTicket({ ...ticket, ticketPrice:price });
+      setTicket({ ...ticket, routeName: route.name });
+      console.log(price + " == " + unitPrice + " == " + stopLen + " == " +  route.name);
+      console.log(route);
+      console.log(ticket);
+    }
+  };
+
+  const handleOnChange = (e) => {
+    setTicket({ ...ticket, [e.target.name]: e.target.value });
+  };
 
   const hanldeOnClick = () => {
     setReader(!reader);
@@ -63,51 +101,13 @@ const BuyTicket = () => {
   };
 
   useEffect(() => {
-    executeAsynchronously(
-      [
-        getBusType,
-        () => {
-          console.log(busType);
-          console.log("Hello World");
-        },
-        getRoute,
-      ],
-      10
-    );
-  }, [ticket]);
-
-  // const getBusDetails = async () => {
-  //   const bId = trip.busType;
-  //   const busT = await BusTypesService.getBusType(bId);
-  //   setBusTypes(busT.data);
-  //   const routes = await getRouteAndType();
-  //   console.log(busT.data);
-  //   console.log(routes);
-  // };
-
-  // const getRouteAndType = async () => {
-  //   const id = busType.id;
-  //   console.log(id);
-  //   const route = await BusRoutesServices.getBusRoute(id);
-  //   console.log(route.data);
-  // };
-
-  // const getRouteStopList = () => {
-  //   console.log(route);
-  //   const stopList = route.stopList.split(",");
-  //   console.log(stopList);
-  // };
-
-  // useEffect(() => {
-  //   getBusDetails();
-  //   console.log(busType);
-  //   console.log(trip);
-  // }, []);
+    getRouteDetails();
+  }, []);
 
   return (
     <div>
       <div className="row">
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className="col-6">
             <label for="busType1" className="form-label">
               Starting Bus Stop
@@ -116,10 +116,15 @@ const BuyTicket = () => {
               type="text"
               required
               className="form-control"
-              id="busType1"
-              name="busType"
+              id="startStop"
+              name="startStop"
+              value={ticket.startStop}
+              onChange={handleOnChange}
             >
               <option>---</option>
+              {route.stopList.map((stop) => {
+                return <option value={stop}>{stop}</option>;
+              })}
             </select>
           </div>
           <div className="col-6">
@@ -130,10 +135,20 @@ const BuyTicket = () => {
               type="text"
               required
               className="form-control"
-              id="busType"
-              name="busType"
-            ></select>
+              id="endStop"
+              name="endStop"
+              value={ticket.endStop}
+              onChange={handleOnChange}
+            >
+              <option>---</option>
+              {route.stopList.map((stop) => {
+                return <option value={stop}>{stop}</option>;
+              })}
+            </select>
           </div>
+          <button type="submit" className="btn btn-primary">
+            Buy Ticket
+          </button>
         </form>
         <div className="">
           {reader ? (

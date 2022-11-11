@@ -68,6 +68,7 @@ const AddBusType = ({ type }) => {
     try {
       const routes1 = await BusRoutesServices.getBusRoutes();
       setRoutes(routes1.data);
+      console.log(routes1.data);
     } catch (error) {
       console.log(error);
     }
@@ -141,24 +142,24 @@ const AddBusType = ({ type }) => {
                     className="form-control"
                     id="day"
                     name="day" */}
-                 <select
-                 type="text"
-                 required
-                 className="form-control"
-                 id="day"
-                 name="day"
-                  value={BusType.day}
-                  onChange={handleOnChange}
+                  <select
+                    type="text"
+                    required
+                    className="form-control"
+                    id="day"
+                    name="day"
+                    value={BusType.day}
+                    onChange={handleOnChange}
                   >
                     <option value="">---</option>
-                    <option Value="Monday">Monday</option>
-                    <option Value="Tuesday">Tuesday</option>
-                    <option Value="Wednesday">Wednesday</option>
-                    <option Value="Thursday">Thursday</option>
-                    <option Value="Friday">Friday</option>
-                    <option Value="Saturday">Saturday</option>
-                    <option Value="Sunnday">Sunnday</option>
-                    </select>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunnday">Sunnday</option>
+                  </select>
                 </div>
                 <div className="col-md-6">
                   <label for="capacity" className="form-label">
