@@ -1,12 +1,7 @@
 import React ,{useState , useEffect} from "react";
-import HomePageNav from '../navbars/homePageNav';
-import Footer from '../footer/footer';
-import NumberFormat from 'react-number-format';
+// import NumberFormat from 'react-number-format';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import '../src/style.css';
 import { Navbar } from "react-bootstrap";
 
 function RegDashboard() {
@@ -137,9 +132,9 @@ function RegDashboard() {
                                 <div class="col">
                                     <div class="mb-3 text-start mt-4">
                                         <label  class="form-label" style={{lineHeight:0}}>Telephone Number</label>
-                                        <NumberFormat  format="##########"  class="form-control" onChange={(e) =>{
+                                        {/* <NumberFormat  format="##########"  class="form-control" onChange={(e) =>{
                                             setTel(e.target.value);
-                                        }}/>
+                                        }}/> */}
                                     </div>
                                 </div>
                                 

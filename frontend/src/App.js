@@ -35,7 +35,7 @@ function App() {
         <Route path='/payment/rechargeAcc' element={<RechargeAcc/>} />
         <Route path='/aboutUs' element={<AboutUs/>}/>
         <Route path='/contactUs' element={<ContactUs/>}/>
-        <Route path='/userReg' element={<userReg/>}/>
+        {/* <Route path='/userReg' element={<userReg/>}/> */}
         {/*Bus Types*/}        
         <Route path='/BusTypes' element={<BusTypesTable/>} />
         <Route path='/BusTypes/add' element={<AddBusType/>} />
