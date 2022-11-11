@@ -189,7 +189,7 @@ const AddBusType = ({ type }) => {
                   >
                     <option defaultChecked>---</option>
                     {routes.map((route, index) => {
-                      return <option value={route.id}>{route.name}</option>;
+                      return <option value={route._id}>{route.name}</option>;
                     })}
                   </select>
                 </div>
