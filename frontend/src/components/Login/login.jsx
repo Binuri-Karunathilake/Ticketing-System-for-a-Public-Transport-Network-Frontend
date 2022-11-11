@@ -14,29 +14,43 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    UserServices.userLogin({ username, password })
-      .then((refUser) => {
-        console.log(refUser);
-        localStorage.setItem("user", refUser.data.data.id);
-        Swal.fire({
-          title: "Success!",
-          text: "Login Success",
-          icon: "success",
-          confirmButtonText: "OK",
-          type: "success",
-        }).then(() => {
-          window.location = "/UserDash";
-        });
-      })
-      .catch(() => {
-        Swal.fire({
-          title: "Error!",
-          text: "Login Not Success",
-          icon: "error",
-          confirmButtonText: "OK",
-          type: "success",
-        });
+
+    if (username === "Admin" && password === "Admin") {
+      localStorage.setItem("admin", true);
+      Swal.fire({
+        title: "Success!",
+        text: "Login Success",
+        icon: "success",
+        confirmButtonText: "OK",
+        type: "success",
+      }).then(() => {
+        window.location = "/Dashboard";
       });
+    } else {
+      UserServices.userLogin({ username, password })
+        .then((refUser) => {
+          console.log(refUser);
+          localStorage.setItem("user", refUser.data.data.id);
+          Swal.fire({
+            title: "Success!",
+            text: "Login Success",
+            icon: "success",
+            confirmButtonText: "OK",
+            type: "success",
+          }).then(() => {
+            window.location = "/UserDash";
+          });
+        })
+        .catch(() => {
+          Swal.fire({
+            title: "Error!",
+            text: "Login Not Success",
+            icon: "error",
+            confirmButtonText: "OK",
+            type: "success",
+          });
+        });
+    }
   };
 
   return (
