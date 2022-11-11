@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../NavBar";
+import { Footer } from "../FooterComponent";
+
 import {
   MDBCard,
   MDBCardBody,
@@ -199,8 +201,21 @@ const AdminDashborad = () => {
           </MDBCol>
         </MDBRow>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <Footer />
+
     </div>
+    
   );
+
 };
 
 export default AdminDashborad;

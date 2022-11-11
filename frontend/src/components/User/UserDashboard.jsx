@@ -230,7 +230,6 @@ const UserDashborad = () => {
       <div className="mt-5">
 
       </div>
-      <Footer />
 
     </div>
 
