@@ -27,7 +27,6 @@ function App() {
     <>
     <div className="container">
       <Routes>
-        <Route path='/Dashboard' element={<AdminDashborad/>} />
         {/*Bus Routes*/}
         <Route path='/busRoutes' element={<BusRooutesTable/>} />
         <Route path='/busRoutes/add' element={<AddBusRoute/>} />
@@ -53,6 +52,8 @@ function App() {
     </div>
     <Routes>
     <Route path='/UserDash' element={<UserDashborad/>} />
+    <Route path='/Dashboard' element={<AdminDashborad/>} />
+
 
     </Routes>
     </>
