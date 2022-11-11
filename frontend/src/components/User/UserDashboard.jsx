@@ -29,7 +29,7 @@ const UserDashborad = () => {
         style={{ paddingTop: "1%", paddingLeft: "4%", paddingRight: "4%" }}
       >
         <MDBRow
-          style={{ paddingTop: "4%", paddingLeft: "4%", paddingRight: "4%" }}
+          style={{ paddingTop: "4%", paddingLeft: "6%", paddingRight: "4%" }}
         >
           <MDBCol sm="3">
             <MDBCard
@@ -43,6 +43,7 @@ const UserDashborad = () => {
                 className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
                 style={{ color: "white" }}
               >
+                
                 <MDBIcon fas icon="fa-solid fa-route fa-lg text-black" />
                 <br /> <span></span>
               </MDBCardHeader>
