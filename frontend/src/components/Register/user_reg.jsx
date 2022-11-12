@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import NumberFormat from "react-number-format";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Navbar } from "react-bootstrap";

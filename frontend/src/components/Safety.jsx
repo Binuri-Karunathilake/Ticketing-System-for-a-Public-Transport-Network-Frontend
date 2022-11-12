@@ -1,27 +1,33 @@
 import React from 'react'
-import { Footer } from "./FooterComponent";
-import NavBar from "./NavBar";
+
 const Safety = () => {
   return (
-    <div>
-    <NavBar />
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+//     <body class="d-flex h-100 text-center text-white bg-dark">
+  
+// <div class="cover-container d-flex w-50 h-50 p-3 mx-auto flex-column">
+// <header class="mb-auto">
+  
+// </header>
 
+// <main class="px-3">
+//   <h1>About Us!</h1>&nbsp;&nbsp;
+//   <p class="lead"><h4 style={{textAlign: "center"}}>Welcome To <span id="W_Name1">Journy.lk</span></h4>
+//     <p style={{textAlign: "center"}}><span id="W_Name2">Journy.lk</span> is a online <span id="W_Type1">ticketing</span> Platform. Here we will provide you only interesting content, which you will like very much. We're dedicated to providing you the best of <span id="W_Type2">ticketing</span>, with a focus on dependability and <span id="W_Spec">ticketing
+//    </span>. We're working to turn our passion for <span id="W_Type3">ticketing</span> into a booming <a href="https://www.blogearns.com/2021/05/free-about-us-page-generator.html" rel="do-follow" style={{ color: "inherit", textDecoration: "none"}}>online website</a>. We hope you enjoy our <span id="W_Type4">ticketing</span> as much as we enjoy offering them to you.</p>
+//    <center>
+//     <p>I will keep posting more important posts on my Website for all of you. Please give your support and love.</p>
+//      </center></p>
+//   {/* <p class="lead">
+//     <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+//   </p> */}
+// </main>
+
+// <footer class="mt-auto text-white-50">
+//   <p>All right reserved @2022.</p>
+// </footer>
+// </div>
+// </body>
  <div class="container py-4 card-img-overlay">
- <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-
 <img src="https://img.freepik.com/free-photo/smiling-businessman-listening-music-with-eyes-closed-while-commuting-by-public-transport_637285-12126.jpg?w=1480&t=st=1668198032~exp=1668198632~hmac=0f0778c509ba7d29e5b3f94f50a9777335c7e3e9b0b3eb1343c68a49daaeb343" class="card-img" alt="..."></img>
 
 <div class="p-5 mb-4 bg-light rounded-3 ">
@@ -50,24 +56,10 @@ const Safety = () => {
       <p>When people are pressing in all around you, it’s harder for you to watch and protect your  belongings. Crowds are not a traveler’s friend – in fact, they can make it far easier for pickpockets and thieves to do their dirty work and escape quickly.
         <br></br><br></br>If things are getting too crowded, get off the bus at the next well-lit stop and wait for a less crowded one.</p>
     </div>
-    
   </div>
-  
-</div>
 </div>
 
-<br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-
-     
-    </div>
-    
+</div>
 
   )
 }
