@@ -47,7 +47,7 @@ const AddPayment = ({ type }) => {
   };
 
   const getUserDetails = async () => {
-    const userRf = await axios.post(API_URL + "user/payment" + userId);
+    const userRf = await axios.post(API_URL + "user/payment/" + userId);
     console.log("====================================");
     console.log(userRf);
     console.log("====================================");
@@ -96,7 +96,7 @@ const AddPayment = ({ type }) => {
         />
         <div className="card m-4 p-5 shadow bg-body rounded border-0">
           <div class="card-header mb-4">
-            <h6 class="card-title">Name</h6>
+            <h6 class="card-title">{userDetails.name}</h6>
           </div>
           <div className="card-body pt-0">
             <div className="row">
@@ -112,8 +112,9 @@ const AddPayment = ({ type }) => {
                       className="form-control"
                       id="name"
                       name="name"
-                      value={route.name}
+                      value={userDetails.balance}
                       onChange={handleOnChange}
+                      disabled
                     />
                   </div>
                   <div className="col-12">

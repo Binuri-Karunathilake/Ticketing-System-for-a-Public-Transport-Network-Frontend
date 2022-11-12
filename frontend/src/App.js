@@ -26,7 +26,7 @@ import userReg from './components/Register/user_reg';
 import RegDashboard from './components/Register/user_reg';
 import AdminTicketTable from './components/AdminTicketTable/AdminTicketTable';
 import UserTicket from './components/UserTickets/UserTicket';
-import Safety from './components/Safety';
+
 
 
 function App() {
