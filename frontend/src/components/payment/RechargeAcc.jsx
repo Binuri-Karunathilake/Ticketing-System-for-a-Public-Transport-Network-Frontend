@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Route } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { API_URL } from "../../constants/CommonConstants";
 
 const RechargeAcc = ({ type }) => {
     const [route, setRoute] = useState({
@@ -15,7 +16,10 @@ const RechargeAcc = ({ type }) => {
     const handleOnChange = (e) => {
       setRoute({ ...route, [e.target.name]: e.target.value });
     };
-  
+
+    const user = localStorage.getItem('user');
+    console.log(user);
+
     // const resetValue = (e) => {
     //   setRoute({ name: "", ticketPrice: 0, stopList: "" });
     // };
@@ -33,17 +37,18 @@ const RechargeAcc = ({ type }) => {
       });
     };
   
-    // const handleSubmit = async (e) => {
-    //   e.preventDefault();
-    //   console.log(route);
-    //   try {
-    //     const reply = await BusRoutesServices.addBusRoute(route);
-    //     console.log(reply);
-    //     notify();
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // };
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      console.log(route);
+      try {
+        console.log(API_URL+'user/payment/'+user);
+        const reply = await axios.post (API_URL+'user/payment/'+user,{amt: route.ticketPrice});
+        console.log(reply);
+        notify();
+      } catch (error) {
+        console.log(error);
+      }
+    };
   
     return (
       <div className="">
@@ -70,7 +75,8 @@ const RechargeAcc = ({ type }) => {
               <div className="col">
                 <div class="container">
   <div class="row">
-    <div class="col-sm-8">                <form className="row g-3" >
+    <div class="col-sm-8">                
+    <form className="row g-3" onSubmit={handleSubmit}>
                   <div className="col-md-6">
                   <label for="ticketPrice" className="form-label">
                     Select card type
