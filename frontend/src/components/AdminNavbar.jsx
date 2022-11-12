@@ -29,7 +29,7 @@ export default function AdminNavbar() {
     <div className="fixed-top">
       <MDBNavbar expand="lg" light style={{ backgroundColor: "#000000" }}>
         <MDBContainer>
-          <MDBNavbarBrand className="text-light" href="/AdminDashboard">
+          <MDBNavbarBrand className="text-light" href="/Dashboard">
             <MDBIcon size="2x" fas icon="bus" />
             &nbsp;
             <b>
@@ -42,41 +42,13 @@ export default function AdminNavbar() {
                 className="text-light"
                 active
                 aria-current="page"
-                href="/UserDash"
+                href="/Dashboard"
               >
                 Home
               </MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink
-                className="text-muted"
-                active
-                aria-current="page"
-                href="/aboutUs"
-              >
-                About Us
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            {/* <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
-                Services
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
-                Careers
-              </MDBNavbarLink>
-            </MDBNavbarItem> */}
-            <MDBNavbarItem>
-              <MDBNavbarLink
-                className="text-muted"
-                active
-                aria-current="page"
-                href="contactUs"
-              >
-                Contact Us
-              </MDBNavbarLink>
-            </MDBNavbarItem>
+            
+
             {/*<MDBNavbarItem>
                      <MDBNavbarLink active aria-current='page' href='#'>
                         <MDBIcon fab icon="facebook-f" className="text-muted"/>
