@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const aboutUs = () => {
   return (
     
@@ -35,10 +36,9 @@ const aboutUs = () => {
 
   
   
-
-
+<div>
 <body class="d-flex h-100 text-center text-white bg-dark">
-  
+
 <div class="cover-container d-flex w-50 h-50 p-3 mx-auto flex-column">
 <header class="mb-auto">
   
@@ -57,12 +57,10 @@ const aboutUs = () => {
   </p> */}
 </main>
 
-<footer class="mt-auto text-white-50">
-  <p>All right reserved @2022.</p>
-</footer>
 </div>
 </body>
 
+</div>
   )
 }
 
