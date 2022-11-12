@@ -40,15 +40,16 @@ const UserGetQR = () => {
               <br />
               (Click the Image)
             </p>
+            
             <div className="qrImage">
               <a href={qr} download>
                 <img src={qr} alt="Ticket QR Code" height={150} />
               </a>
-              <a href={qr} download className="btn btn-outline-primary saveBtn">
+              <a href={qr} download className="btn btn-info saveBtn">
                 Save
               </a>
             </div>
-            <Link to="/UserDash" className="btn btn-outline-secondary">
+            <Link to="/UserDash" className="btn btn-secondary">
               <u>Go to Home Page</u>
             </Link>
           </div>

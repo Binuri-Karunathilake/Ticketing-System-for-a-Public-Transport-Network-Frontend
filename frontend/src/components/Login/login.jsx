@@ -3,13 +3,15 @@ import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import Cookies from "js-cookie";
 import UserServices from "../../services/UserServices";
+import LoginNavbar from "../LoginNavbar";
+
 
 function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   function register() {
-    window.location.href = "/student/Reg";
+    window.location.href = "/register";
   }
 
   const handleSubmit = (e) => {
@@ -55,6 +57,16 @@ function Login() {
 
   return (
     <div>
+
+<LoginNavbar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div
         class="global-container"
         style={{ paddingTop: "9%", paddingBottom: "1%" }}
@@ -117,5 +129,6 @@ function Login() {
     </div>
   );
 }
+
 
 export default Login;

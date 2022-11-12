@@ -4,6 +4,9 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { Navbar } from "react-bootstrap";
 import UserServices from "../../services/UserServices";
+import LoginNavbar from "../LoginNavbar";
+
+
 
 function RegDashboard() {
   const [name, setFullName] = useState("");
@@ -93,24 +96,32 @@ function RegDashboard() {
   }
   return (
     <div>
-      <Navbar />
+<LoginNavbar />
+<br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div
         class="global-container3"
         style={{ paddingTop: "5%", paddingBottom: "5%" }}
       >
         <center>
           <div class="container">
-            <div class="row bg-light rounded p-4">
+            <div class="row bg-dark rounded p-4">
               <center>
-                <h4 class="card-title text-center pt-5 pb-2  text-uppercase text-dark">
+                <h4 class="card-title text-center pt-5 pb-2  text-uppercase text-light">
                   User Registration
                 </h4>
               </center>
               <div class="col-sm-12 mb-4">
                 <div class="row">
-                  <div class="col-sm-8">
+                  <div class="col-sm">
                     <div class="mb-3 text-start mt-4">
-                      <label class="form-label" style={{ lineHeight: 0 }}>
+                      <label class="form-label text-light " style={{ lineHeight: 0 }}>
                         Full Name
                       </label>
                       <input
@@ -126,7 +137,7 @@ function RegDashboard() {
                 <div class="row">
                   <div class="col">
                     <div class="mb-3 text-start mt-4">
-                      <label class="form-label" style={{ lineHeight: 0 }}>
+                      <label class="form-label text-light" style={{ lineHeight: 0 }}>
                         Email
                       </label>
                       <input
@@ -143,7 +154,7 @@ function RegDashboard() {
                   </div>
                   <div class="col">
                     <div class="mb-3 text-start mt-4">
-                      <label class="form-label" style={{ lineHeight: 0 }}>
+                      <label class="form-label text-light" style={{ lineHeight: 0 }}>
                         Telephone Number
                       </label>
                       <input
@@ -162,7 +173,7 @@ function RegDashboard() {
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="mb-3 text-start mt-4">
-                      <label class="form-label" style={{ lineHeight: 0 }}>
+                      <label class="form-label text-light" style={{ lineHeight: 0 }}>
                         {" "}
                         Password
                       </label>
@@ -185,7 +196,7 @@ function RegDashboard() {
                   </div>
                   <div class="col-sm-6">
                     <div class="mb-3 text-start mt-4">
-                      <label class="form-label" style={{ lineHeight: 0 }}>
+                      <label class="form-label text-light" style={{ lineHeight: 0 }}>
                         Confirm Password
                       </label>
                       <input
@@ -211,13 +222,13 @@ function RegDashboard() {
                 <div class="mb-3 text-end ">
                   <button
                     type="button"
-                    class="btn btn-outline-dark"
-                    onClick={() => (window.location.href = "/RegDashboard")}
+                    class="btn btn-outline-light"
+                    onClick={() => (window.location.href = "/index")}
                   >
                     Back
                   </button>
                   &nbsp;&nbsp;
-                  <button type="button" class="btn btn-dark" onClick={submit}>
+                  <button type="button" class="btn btn-info" onClick={submit}>
                     Submit
                   </button>
                 </div>

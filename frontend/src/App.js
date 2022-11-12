@@ -25,15 +25,25 @@ import RegDashboard from './components/Register/user_reg';
 import AdminTicketTable from './components/AdminTicketTable/AdminTicketTable';
 import UserTicket from './components/UserTickets/UserTicket';
 import Safety from './components/Safety';
+import Index from './components/Login/index';
 
 
 function App() {
   return (
     <>
-    
+    <div className="container">
+      <Routes>
+
+        <Route path='/register' element={<RegDashboard/>} />
+        <Route path='/' element={<Login />} />
+      
+
+      </Routes>
+    </div>
       <Routes>
         
         {/*Bus Routes*/}
+        <Route path='/index' element={<Index/>} />
         <Route path='/busRoutes' element={<BusRooutesTable/>} />
         <Route path='/busRoutes/add' element={<AddBusRoute/>} />
         <Route path='/busRoutes/details' element={<RouteDetails/>} />
@@ -43,7 +53,6 @@ function App() {
         <Route path='/payment/rechargeAcc' element={<RechargeAcc/>} />
         <Route path='/aboutUs' element={<AboutUs/>}/>
         <Route path='/contactUs' element={<ContactUs/>}/>
-        <Route path='/register' element={<RegDashboard/>} />
         {/* <Route path='/userReg' element={<userReg/>}/> */}
 
         {/*Bus Types*/}        
@@ -55,8 +64,7 @@ function App() {
         <Route path='/BusJourney/ticket' element={<BuyTicket />} />
         <Route path='/tickets' element={<AdminTicketTable />} />
 
-        {/* Login */}
-        <Route path='/' element={<Login />} />
+
 
         {/* user */}
         <Route path='/UserReadQR' element={<UserGetQR/>} />
