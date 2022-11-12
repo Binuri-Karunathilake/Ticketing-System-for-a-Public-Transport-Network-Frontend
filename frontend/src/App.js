@@ -24,6 +24,7 @@ import userReg from './components/Register/user_reg';
 import RegDashboard from './components/Register/user_reg';
 import AdminTicketTable from './components/AdminTicketTable/AdminTicketTable';
 import UserTicket from './components/UserTickets/UserTicket';
+import BusTypeView from './components/BusTypesTable/BusTypesView';
 function App() {
   return (
     <>
@@ -42,6 +43,7 @@ function App() {
         {/*Bus Types*/}        
         <Route path='/BusTypes' element={<BusTypesTable/>} />
         <Route path='/BusTypes/add' element={<AddBusType/>} />
+        <Route path='/BusTypeView' element={<BusTypeView/>} />
         {/* Ticketing System*/}
         <Route path='/BusJourney' element={<BeginBusJourney />} />
         <Route path='/BusJourney/ticket' element={<BuyTicket />} />
