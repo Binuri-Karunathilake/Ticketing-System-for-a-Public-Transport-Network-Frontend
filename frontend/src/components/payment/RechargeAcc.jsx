@@ -128,10 +128,7 @@ const RechargeAcc = ({ type }) => {
 
                   </div>
                 </form></div>
-    <div class="col-sm-4"><div class="card" style={{width: 500}}>
-  <img src="https://images.pexels.com/photos/205353/pexels-photo-205353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" style={{overflow:"hidden"}}></img>
- 
-</div></div>
+
   </div>
 </div>
               </div>
