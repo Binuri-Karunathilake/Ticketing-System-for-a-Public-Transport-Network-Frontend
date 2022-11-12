@@ -3,6 +3,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import BusTypesService from "../../services/BusTypesService"
+import NavBar from "../NavBar";
+import { Footer } from "../FooterComponent";
 
 const BusTypeView = () => {
     const [BusTypes, setBusTypes] = useState([{
@@ -44,6 +46,15 @@ const BusType = ({ BusType, index }) => {
 
   return (
     <div>
+            <NavBar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="card m-4 p-5 shadow bg-body rounded border-0">
         <div class="card-header mb-4">
           <h6 class="card-title">Bus Types</h6>

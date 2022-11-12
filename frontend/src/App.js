@@ -20,7 +20,6 @@ import Login from './components/Login/login';
 import UserDashborad from './components/User/UserDashboard';
 import ContactUs from './components/ContactUs';
 import UserGetQR from './components/UserGetQR/UserGetQR';
-import Safety from './components/Safety';
 
 import userReg from './components/Register/user_reg';
 import RegDashboard from './components/Register/user_reg';
