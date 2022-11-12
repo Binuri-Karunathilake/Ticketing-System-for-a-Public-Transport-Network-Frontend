@@ -49,7 +49,7 @@ const UserDashborad = () => {
                 <MDBIcon fas icon="fa-duotone fa-bus fa-lg text-black" />
                 <br /> <span></span>
               </MDBCardHeader>
-              <Link to="/BusTypes" class="btn btn-info">
+              <Link to="/BusTypeView" class="btn btn-info">
                 Bus Types
               </Link>
             </MDBCard>

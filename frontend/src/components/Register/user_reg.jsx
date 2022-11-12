@@ -106,8 +106,7 @@ function RegDashboard() {
       <br></br>
       <br></br>
       <div
-        class="global-container3"
-        style={{ paddingTop: "5%", paddingBottom: "5%" }}
+        class="global-container3" style={{ paddingTop: "5%", paddingBottom: "5%" }}
       >
         <center>
           <div class="container">
