@@ -80,7 +80,7 @@ const AdminDashborad = () => {
                 <MDBIcon fas icon="fa-solid fa-route fa-lg text-black" />
                 <br />
               </MDBCardHeader>
-              <Link to="/BusRoutes" class="btn btn-dark text-white">
+              <Link to="/busRoutes/add" class="btn btn-dark text-white">
                 Add Route
               </Link>
             </MDBCard>
@@ -114,7 +114,7 @@ const AdminDashborad = () => {
                 <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" />
                 <br /> <span></span>
               </MDBCardHeader>
-              <Link to="/BusRoutes" class="btn btn-dark text-white">
+              <Link to="/BusTypes" class="btn btn-dark text-white">
                 View Bus Types
               </Link>
             </MDBCard>
@@ -152,7 +152,7 @@ const AdminDashborad = () => {
                 <br />
                 <span></span>
               </MDBCardHeader>
-              <Link to="/BusRoutes" class="btn btn-dark text-white">
+              <Link to="/BusTypes/add" class="btn btn-dark text-white">
                 Add Bus Types
               </Link>
             </MDBCard>
@@ -194,7 +194,7 @@ const AdminDashborad = () => {
                 <br />
                 <span></span>
               </MDBCardHeader>
-              <Link to="/BusRoutes" class="btn btn-dark text-white">
+              <Link to="/BusJourney" class="btn btn-dark text-white">
                 Start New Journey
               </Link>
             </MDBCard>
@@ -211,11 +211,8 @@ const AdminDashborad = () => {
       <br></br>
 
       <AdminFooter />
-
     </div>
-    
   );
-
 };
 
 export default AdminDashborad;
