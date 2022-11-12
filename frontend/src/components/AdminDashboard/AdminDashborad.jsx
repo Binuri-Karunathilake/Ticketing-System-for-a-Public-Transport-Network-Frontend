@@ -199,6 +199,30 @@ const AdminDashborad = () => {
               </Link>
             </MDBCard>
           </MDBCol>
+
+          <MDBCol sm="3">
+            <MDBCard
+              className=" "
+              style={{
+                boxShadow:
+                  "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+              }}
+            >
+              <MDBCardHeader
+                className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
+                style={{ color: "white" }}
+              >
+                <MDBIcon fas icon="plus-circle  text-black" />
+                &nbsp;
+                <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" />
+                <br />
+                <span></span>
+              </MDBCardHeader>
+              <Link to="/tickets" class="btn btn-dark text-white">
+                Purchased Tickets
+              </Link>
+            </MDBCard>
+          </MDBCol>
         </MDBRow>
       </div>
       <br></br>

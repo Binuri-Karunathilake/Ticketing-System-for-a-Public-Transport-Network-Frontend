@@ -54,6 +54,7 @@ function App() {
         <Route path='/BusJourney' element={<BeginBusJourney />} />
         <Route path='/BusJourney/ticket' element={<BuyTicket />} />
         <Route path='/tickets' element={<AdminTicketTable />} />
+        
 
         {/* Login */}
         <Route path='/' element={<Login />} />
