@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import TicketServices from "../../services/TicketServices";
+import NavBar from "../NavBar";
+import { Footer } from "../FooterComponent";
 
 const AdminTicketTable = () => {
   const [tickets, setTickets] = useState([
@@ -26,6 +28,20 @@ const AdminTicketTable = () => {
 
   return (
     <div>
+
+
+<div>
+      <NavBar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+
       <div className="card m-4 p-5 shadow bg-body rounded border-0">
         <div class="card-header mb-4">
           <h6 class="card-title">Bus Types</h6>
@@ -65,6 +81,17 @@ const AdminTicketTable = () => {
           </div>
         </div>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <Footer />
+    </div>
     </div>
   );
 };

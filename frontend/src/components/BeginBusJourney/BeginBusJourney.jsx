@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import BusTypesService from "../../services/BusTypesService";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
+
+
 
 const BeginBusJourney = () => {
   const [tripDetails, setTripDetails] = useState({
@@ -59,6 +63,18 @@ const BeginBusJourney = () => {
   console.log(busTypes);
 
   return (
+    <div>
+    <AdminNavbar />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
+    
     <div className="card p-4 mt-5">
       <div className="card-head">
         <h4>Start Journey</h4>
@@ -107,6 +123,18 @@ const BeginBusJourney = () => {
           </div>
         </form>
       </div>
+    </div>
+    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <AdminFooter />
+
     </div>
   );
 };

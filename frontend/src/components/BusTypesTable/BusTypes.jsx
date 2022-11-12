@@ -1,5 +1,8 @@
 import Swal from "sweetalert2";
 import BusTypesService from "../../services/BusTypesService";
+
+import { Footer } from "../FooterComponent";
+import NavBar from "../NavBar";
 const BusType = ({ BusType, index }) => {
   const deleteBusType = async () => {
     try {
@@ -23,6 +26,8 @@ const BusType = ({ BusType, index }) => {
   };
 
   return (
+
+    
     <tr>
       <th scope="row">{index + 1}</th>
       <td>{BusType.name}</td>

@@ -7,7 +7,8 @@ import BusTypesService from "../../services/BusTypesService";
 import QrReader from "react-qr-scanner";
 import { toast, ToastContainer } from "react-toastify";
 import TicketServices from "../../services/TicketServices";
-
+import { Footer } from "../FooterComponent";
+import NavBar from "../NavBar";
 const BuyTicket = () => {
   const { tripDetails, busTypes } = JSON.parse(
     localStorage.getItem("tripDetails")
@@ -142,6 +143,16 @@ const BuyTicket = () => {
   }, [ticket]);
 
   return (
+    <div>
+    <NavBar />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     <div className="card p-3 mt-5">
       <div className="card-header mb-3">
         <h4>Buy Ticket</h4>
@@ -243,6 +254,17 @@ const BuyTicket = () => {
           End Journey {">>"}
         </button>
       </div>
+    </div>
+    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <Footer />
     </div>
   );
 };

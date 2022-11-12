@@ -11,6 +11,8 @@ import {
   MDBCardHeader,
 } from "mdb-react-ui-kit";
 
+
+
 const UserDashborad = () => {
   return (
     <div>
@@ -44,7 +46,7 @@ const UserDashborad = () => {
                 style={{ color: "white" }}
               >
                 
-                <MDBIcon fas icon="fa-solid fa-route fa-lg text-black" />
+                <MDBIcon fas icon="fa-duotone fa-bus fa-lg text-black" />
                 <br /> <span></span>
               </MDBCardHeader>
               <Link to="/BusTypes" class="btn btn-info">
@@ -79,7 +81,7 @@ const UserDashborad = () => {
               >
                 <MDBIcon fas icon="plus-circle text-black" />
                 &nbsp;
-                <MDBIcon fas icon="fa-solid fa-route fa-lg text-black" />
+                <MDBIcon fas icon="fa-solid fa-envelope fa-lg text-black" />
                 <br />
               </MDBCardHeader>
               <Link to="/UserReadQR" class="btn btn-info">
@@ -118,10 +120,10 @@ const UserDashborad = () => {
                 className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
                 style={{ color: "white" }}
               >
-                <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" />
+                <MDBIcon fas icon="fa-solid fa-check fa-lg text-black" />
                 <br /> <span></span>
               </MDBCardHeader>
-              <Link to="/" class="btn btn-info">
+              <Link to="/Safety" class="btn btn-info">
                 Safety
               </Link>
             </MDBCard>
@@ -151,13 +153,12 @@ const UserDashborad = () => {
                 className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
                 style={{ color: "white" }}
               >
-                <MDBIcon fas icon="plus-circle  text-black" />
-                &nbsp;
-                <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" />
+
+                <MDBIcon fas icon="fa-solid fa-clock fa-lg text-black" />
                 <br />
                 <span></span>
               </MDBCardHeader>
-              <Link to="/BusTypes/add" class="btn btn-info">
+              <Link to="/contactUs" class="btn btn-info">
                 Time Table
               </Link>
             </MDBCard>
@@ -188,9 +189,8 @@ const UserDashborad = () => {
                 className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
                 style={{ color: "white" }}
               >
-                <MDBIcon fas icon="plus-circle  text-black" />
-                &nbsp;
-                <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" />
+                
+                <MDBIcon fas icon="fa-solid fa-address-card fa-lg text-black" />
                 <br />
                 
                 <span></span>
@@ -213,14 +213,36 @@ const UserDashborad = () => {
                 className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
                 style={{ color: "white" }}
               >
-                <MDBIcon fas icon="plus-circle  text-black" />
-                &nbsp;
-                <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" />
+                
+                
+                <MDBIcon fas icon="fa-solid fa-clipboard fa-lg text-black" />
                 <br />
                 <span></span>
               </MDBCardHeader>
-              <Link to="/BusTypes/add" class="btn btn-info">
-                How to Pay
+              <Link to="/payment/rechargeAcc" class="btn btn-info">
+                Payment
+              </Link>
+            </MDBCard>
+          </MDBCol>
+
+          <MDBCol sm="3">
+            <MDBCard
+              className=" "
+              style={{
+                boxShadow:
+                  "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+              }}
+            >
+              <MDBCardHeader
+                className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
+                style={{ color: "white" }}
+              >
+                <MDBIcon fas icon="fa-solid fa-phone fa-lg text-black" />
+                <br />
+                <span></span>
+              </MDBCardHeader>
+              <Link to="/contactUs" class="btn btn-info">
+                Contact US
               </Link>
             </MDBCard>
           </MDBCol>
@@ -230,7 +252,6 @@ const UserDashborad = () => {
       <div className="mt-5">
 
       </div>
-
 
       <br></br>
       <br></br>
@@ -242,9 +263,6 @@ const UserDashborad = () => {
       <br></br>
 
       <Footer />
-
-
-
     </div>
 
     
