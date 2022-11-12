@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 //import BusRoutesServices from "../../services/BusRoutesServices";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -34,7 +34,7 @@ const AddPayment = ({ type }) => {
   const userId = localStorage.getItem("user");
 
   const notify = () => {
-    toast.success("Route added successfully", {
+    toast.success("Payment added successfully", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -118,13 +118,9 @@ const AddPayment = ({ type }) => {
                     />
                   </div>
                   <div className="col-12">
-                    <button type="submit" className="btn btn-danger me-3">
+                    <Link to="/payment/rechargeAcc" type="submit" className="btn btn-danger me-3">
                       Recharge Account
-                    </button>
-
-                    <button type="submit" className="btn btn-success me-3">
-                      Check your Travel
-                    </button>
+                    </Link>
                   </div>
                 </form>
               </div>

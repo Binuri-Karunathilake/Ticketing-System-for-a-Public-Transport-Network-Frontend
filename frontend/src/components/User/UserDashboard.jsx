@@ -219,7 +219,7 @@ const UserDashborad = () => {
                 <br />
                 <span></span>
               </MDBCardHeader>
-              <Link to="/payment/rechargeAcc" class="btn btn-info">
+              <Link to="/payment/add" class="btn btn-info">
                 Payment
               </Link>
             </MDBCard>
