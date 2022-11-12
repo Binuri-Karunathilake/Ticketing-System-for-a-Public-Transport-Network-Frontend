@@ -9,6 +9,7 @@ import { toast, ToastContainer } from "react-toastify";
 import TicketServices from "../../services/TicketServices";
 import { Footer } from "../FooterComponent";
 import NavBar from "../NavBar";
+import UserServices from "../../services/UserServices";
 const BuyTicket = () => {
   const { tripDetails, busTypes } = JSON.parse(
     localStorage.getItem("tripDetails")
@@ -144,118 +145,125 @@ const BuyTicket = () => {
 
   return (
     <div>
-    <NavBar />
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <div className="card p-3 mt-5">
-      <div className="card-header mb-3">
-        <h4>Buy Ticket</h4>
-      </div>
-      <ToastContainer
-        position="top-center"
-        autoClose={500}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
-      <div className="row">
-        <form onSubmit={handleSubmit}>
-          <div className="col-6">
-            <label for="busType1" className="form-label">
-              Starting Bus Stop
-            </label>
-            <select
-              type="text"
-              required
-              className="form-control"
-              id="startStop"
-              name="startStop"
-              value={ticket.startStop}
-              onChange={handleOnChange}
-            >
-              <option>---</option>
-              {route.stopList.map((stop) => {
-                return <option value={stop}>{stop}</option>;
-              })}
-            </select>
-          </div>
-          <div className="col-6">
-            <label for="busType" className="form-label">
-              Stop Bus Stop
-            </label>
-            <select
-              type="text"
-              required
-              className="form-control"
-              id="endStop"
-              name="endStop"
-              value={ticket.endStop}
-              onChange={handleOnChange}
-            >
-              <option>---</option>
-              {route.stopList.map((stop) => {
-                return <option value={stop}>{stop}</option>;
-              })}
-            </select>
-          </div>
-          {scanned ? (
-            <button type="submit" className="btn btn-primary mx-3 mt-3">
-              Buy Ticket
-            </button>
-          ) : (
+      <NavBar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div className="card p-3 mt-5">
+        <div className="card-header mb-3">
+          <h4>Buy Ticket</h4>
+        </div>
+        <ToastContainer
+          position="top-center"
+          autoClose={500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
+        <div className="row">
+          <form onSubmit={handleSubmit}>
+            <div className="col-6">
+              <label for="busType1" className="form-label">
+                Starting Bus Stop
+              </label>
+              <select
+                type="text"
+                required
+                className="form-control"
+                id="startStop"
+                name="startStop"
+                value={ticket.startStop}
+                onChange={handleOnChange}
+              >
+                <option>---</option>
+                {route.stopList.map((stop) => {
+                  return <option value={stop}>{stop}</option>;
+                })}
+              </select>
+            </div>
+            <div className="col-6">
+              <label for="busType" className="form-label">
+                Stop Bus Stop
+              </label>
+              <select
+                type="text"
+                required
+                className="form-control"
+                id="endStop"
+                name="endStop"
+                value={ticket.endStop}
+                onChange={handleOnChange}
+              >
+                <option>---</option>
+                {route.stopList.map((stop) => {
+                  return <option value={stop}>{stop}</option>;
+                })}
+              </select>
+            </div>
+            {scanned ? (
+              <button type="submit" className="btn btn-primary mx-3 mt-3">
+                Buy Ticket
+              </button>
+            ) : (
+              <button
+                type="submit"
+                disabled
+                className="btn btn-primary mx-3 mt-3"
+              >
+                Buy Ticket
+              </button>
+            )}
             <button
-              type="submit"
-              disabled
-              className="btn btn-primary mx-3 mt-3"
+              onClick={hanldeOnClick}
+              type="button"
+              className="btn btn-primary ml-3 mt-3"
             >
-              Buy Ticket
+              Scan QR Code
             </button>
-          )}
+          </form>
+          <div className="mt-5">
+            {reader ? (
+              <QrReader
+                delay={300}
+                onError={handleErrorFile}
+                onScan={handleScanFile}
+                style={{
+                  height: 240,
+                  width: 320,
+                }}
+                className="qrReader"
+              />
+            ) : null}
+            {scanned ? (
+              <div class="alert alert-success" role="alert">
+                User authenticated successfully! UserId : {userId}
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        </div>
+        <div className="row d-flex justify-content-center">
           <button
-            onClick={hanldeOnClick}
+            onClick={endJourney}
             type="button"
-            className="btn btn-primary ml-3 mt-3"
+            className="btn btn-success ml-3 mt-3 col-2"
           >
-            Scan QR Code
+            End Journey {">>"}
           </button>
-        </form>
-        <div className="mt-5">
-          {reader ? (
-            <QrReader
-              delay={300}
-              onError={handleErrorFile}
-              onScan={handleScanFile}
-              style={{
-                height: 240,
-                width: 320,
-              }}
-              className="qrReader"
-            />
-          ) : null}
         </div>
       </div>
-      <div className="row d-flex justify-content-center">
-        <button
-          onClick={endJourney}
-          type="button"
-          className="btn btn-success ml-3 mt-3 col-2"
-        >
-          End Journey {">>"}
-        </button>
-      </div>
-    </div>
-    <br></br>
+      <br></br>
       <br></br>
       <br></br>
       <br></br>
