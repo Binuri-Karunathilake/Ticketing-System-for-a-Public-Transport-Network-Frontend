@@ -5,6 +5,8 @@ import { Route } from "react-router-dom";
 //import BusRoutesServices from "../../services/BusRoutesServices";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Footer } from "../FooterComponent";
+import NavBar from "../NavBar";
 
 const AddPayment = ({ type }) => {
     const [route, setRoute] = useState({
@@ -47,6 +49,16 @@ const AddPayment = ({ type }) => {
     // };
   
     return (
+      <div>
+      <NavBar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="">
         <ToastContainer
           position="top-center"
@@ -100,6 +112,17 @@ const AddPayment = ({ type }) => {
           </div>
         </div>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <Footer />
+    </div>
     );
   };
   

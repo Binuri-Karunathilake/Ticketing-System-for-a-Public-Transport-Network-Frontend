@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../NavBar";
-import { Footer } from "../FooterComponent";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
 
 import {
   MDBCard,
@@ -15,7 +15,7 @@ import {
 const AdminDashborad = () => {
   return (
     <div>
-      <NavBar />
+      <AdminNavbar />
       <br></br>
       <br></br>
       <br></br>
@@ -47,7 +47,7 @@ const AdminDashborad = () => {
                 <MDBIcon fas icon="fa-solid fa-route fa-lg text-black" />
                 <br /> <span></span>
               </MDBCardHeader>
-              <Link to="/BusRoutes" class="btn btn-info">
+              <Link to="/BusRoutes" class="btn btn-dark text-white">
                 View Route
               </Link>
             </MDBCard>
@@ -80,7 +80,7 @@ const AdminDashborad = () => {
                 <MDBIcon fas icon="fa-solid fa-route fa-lg text-black" />
                 <br />
               </MDBCardHeader>
-              <Link to="/BusRoutes/add" class="btn btn-info">
+              <Link to="/BusRoutes" class="btn btn-dark text-white">
                 Add Route
               </Link>
             </MDBCard>
@@ -114,7 +114,7 @@ const AdminDashborad = () => {
                 <MDBIcon fas icon="fa-solid fa-bus fa-lg text-black" />
                 <br /> <span></span>
               </MDBCardHeader>
-              <Link to="/BusTypes" class="btn btn-info">
+              <Link to="/BusRoutes" class="btn btn-dark text-white">
                 View Bus Types
               </Link>
             </MDBCard>
@@ -152,7 +152,7 @@ const AdminDashborad = () => {
                 <br />
                 <span></span>
               </MDBCardHeader>
-              <Link to="/BusTypes/add" class="btn btn-info">
+              <Link to="/BusRoutes" class="btn btn-dark text-white">
                 Add Bus Types
               </Link>
             </MDBCard>
@@ -194,7 +194,7 @@ const AdminDashborad = () => {
                 <br />
                 <span></span>
               </MDBCardHeader>
-              <Link to="/BusJourney" class="btn btn-info">
+              <Link to="/BusRoutes" class="btn btn-dark text-white">
                 Start New Journey
               </Link>
             </MDBCard>
@@ -210,7 +210,7 @@ const AdminDashborad = () => {
       <br></br>
       <br></br>
 
-      <Footer />
+      <AdminFooter />
 
     </div>
     
