@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import BusTypesService from "../../services/BusTypesService"
 import BusType from "./BusTypes";
-import NavBar from "../NavBar";
-import { Footer } from "../FooterComponent";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
 
 const BusTypesTable = () => {
     const [BusTypes, setBusTypes] = useState([{
@@ -34,7 +34,7 @@ const BusTypesTable = () => {
 
   return (
     <div>    <div>
-    <NavBar />
+    <AdminNavbar />
     <br></br>
     <br></br>
     <br></br>
@@ -88,8 +88,12 @@ const BusTypesTable = () => {
       <br></br>
       <br></br>
 
-      <Footer />
+    
+
+      <AdminFooter />
+
     </div>
+  
   );
 };
 

@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BusRoutesServices from "../../services/BusRoutesServices";
 import Swal from "sweetalert2";
-import NavBar from "../NavBar";
-import { Footer } from "../FooterComponent";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
 
 const BusRoute = ({ route, index }) => {
   const deleteRoute = async () => {

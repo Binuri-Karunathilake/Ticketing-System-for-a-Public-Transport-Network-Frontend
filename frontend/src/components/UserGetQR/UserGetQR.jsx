@@ -48,7 +48,7 @@ const UserGetQR = () => {
                 Save
               </a>
             </div>
-            <Link to="/" className="btn btn-outline-secondary">
+            <Link to="/UserDash" className="btn btn-outline-secondary">
               <u>Go to Home Page</u>
             </Link>
           </div>

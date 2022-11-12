@@ -7,8 +7,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BusRoutesServices from "../../services/BusRoutesServices";
 
-import { Footer } from "../FooterComponent";
-import NavBar from "../NavBar";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
 
 
 const AddBusType = ({ type }) => {
@@ -83,7 +83,16 @@ const AddBusType = ({ type }) => {
   }, []);
 
   return (
-    
+    <div>
+    <AdminNavbar />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     <div className="">
       <ToastContainer
         position="top-center"
@@ -225,6 +234,20 @@ const AddBusType = ({ type }) => {
           </div>
         </div>
       </div>
+    </div>
+
+
+    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <AdminFooter />
+
     </div>
   );
 };

@@ -5,8 +5,8 @@ import { Route } from "react-router-dom";
 import BusRoutesServices from "../../services/BusRoutesServices";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import NavBar from "../NavBar";
-import { Footer } from "../FooterComponent";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
 
 
 const AddBusRoute = ({ type }) => {
@@ -52,6 +52,16 @@ const AddBusRoute = ({ type }) => {
   return (
     <div className="">
 
+<div>
+      <AdminNavbar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
 
 
       
@@ -143,6 +153,18 @@ const AddBusRoute = ({ type }) => {
           </div>
         </div>
       </div>
+    </div>
+    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <AdminFooter />
+
     </div>
   );
 };

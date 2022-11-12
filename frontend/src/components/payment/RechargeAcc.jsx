@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Route } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NavBar from "../NavBar";
+import { Footer } from "../FooterComponent";
 
 const RechargeAcc = ({ type }) => {
     const [route, setRoute] = useState({
@@ -46,6 +48,17 @@ const RechargeAcc = ({ type }) => {
     // };
   
     return (
+
+      <div>
+      <NavBar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="">
         <ToastContainer
           position="top-center"
@@ -114,6 +127,18 @@ const RechargeAcc = ({ type }) => {
           </div>
         </div>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <Footer />
+
+    </div>
     );
   };
   
