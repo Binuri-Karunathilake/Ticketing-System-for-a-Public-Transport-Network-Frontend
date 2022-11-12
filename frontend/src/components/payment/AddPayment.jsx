@@ -47,11 +47,11 @@ const AddPayment = ({ type }) => {
   };
 
   const getUserDetails = async () => {
-    const userRf = await axios.post(API_URL + "user/payment/" + userId);
+    const userRf = await axios.get(API_URL + "user/payment/" + userId);
     console.log("====================================");
     console.log(userRf);
     console.log("====================================");
-    setUserDetails(userRf.details);
+    setUserDetails(userRf.data.user);
   };
 
   useEffect(() => {
