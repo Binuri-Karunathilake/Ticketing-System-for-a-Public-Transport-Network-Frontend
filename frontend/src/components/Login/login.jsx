@@ -9,7 +9,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   function register() {
-    window.location.href = "/student/Reg";
+    window.location.href = "/register";
   }
 
   const handleSubmit = (e) => {
