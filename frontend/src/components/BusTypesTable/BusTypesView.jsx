@@ -88,6 +88,16 @@ const BusType = ({ BusType, index }) => {
           </div>
         </div>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <Footer />
     </div>
   );
 };
