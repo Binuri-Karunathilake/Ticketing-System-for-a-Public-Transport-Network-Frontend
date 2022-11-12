@@ -24,41 +24,46 @@ import userReg from './components/Register/user_reg';
 import RegDashboard from './components/Register/user_reg';
 import AdminTicketTable from './components/AdminTicketTable/AdminTicketTable';
 import UserTicket from './components/UserTickets/UserTicket';
+import Safety from './components/Safety';
+
+
 function App() {
   return (
     <>
-    <div className="container">
+    
       <Routes>
+        
         {/*Bus Routes*/}
         <Route path='/busRoutes' element={<BusRooutesTable/>} />
         <Route path='/busRoutes/add' element={<AddBusRoute/>} />
         <Route path='/busRoutes/details' element={<RouteDetails/>} />
+        <Route path='/Safety' element={<Safety/>} />
+
         <Route path='/payment/add' element={<AddPayment/>} />
         <Route path='/payment/rechargeAcc' element={<RechargeAcc/>} />
         <Route path='/aboutUs' element={<AboutUs/>}/>
         <Route path='/contactUs' element={<ContactUs/>}/>
         <Route path='/register' element={<RegDashboard/>} />
         {/* <Route path='/userReg' element={<userReg/>}/> */}
+
         {/*Bus Types*/}        
         <Route path='/BusTypes' element={<BusTypesTable/>} />
         <Route path='/BusTypes/add' element={<AddBusType/>} />
+
         {/* Ticketing System*/}
         <Route path='/BusJourney' element={<BeginBusJourney />} />
         <Route path='/BusJourney/ticket' element={<BuyTicket />} />
         <Route path='/tickets' element={<AdminTicketTable />} />
+
         {/* Login */}
         <Route path='/' element={<Login />} />
+
         {/* user */}
         <Route path='/UserReadQR' element={<UserGetQR/>} />
         <Route path='/UserTickets' element={<UserTicket/>} />
-
-      </Routes>
-    </div>
-    <Routes>
-    <Route path='/UserDash' element={<UserDashborad/>} />
-    <Route path='/Dashboard' element={<AdminDashborad/>} />
-
-
+        <Route path='/UserDash' element={<UserDashborad/>} />
+        <Route path='/Dashboard' element={<AdminDashborad/>} />
+    
     </Routes>
     </>
   );

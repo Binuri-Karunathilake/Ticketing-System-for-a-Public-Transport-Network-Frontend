@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import qrcode from "qrcode";
 import { useState } from "react";
 import { useEffect } from "react";
-
+import { Footer } from "../FooterComponent";
+import NavBar from "../NavBar";
 const UserGetQR = () => {
   const [qr, setQr] = useState("");
   const id = localStorage.getItem("user");
@@ -19,6 +20,16 @@ const UserGetQR = () => {
 
   return (
     <div>
+          <div>
+      <NavBar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="d-flex justify-content-center container mt-5">
         <div className="card">
           <div className="card-header">User QR</div>
@@ -43,6 +54,17 @@ const UserGetQR = () => {
           </div>
         </div>
       </div>
+    </div>
+    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <Footer />
     </div>
   );
 };

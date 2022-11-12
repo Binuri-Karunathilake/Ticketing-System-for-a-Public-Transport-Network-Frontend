@@ -7,6 +7,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BusRoutesServices from "../../services/BusRoutesServices";
 
+import { Footer } from "../FooterComponent";
+import NavBar from "../NavBar";
+
+
 const AddBusType = ({ type }) => {
   const [BusType, setBusType] = useState({
     name: "",
@@ -79,6 +83,7 @@ const AddBusType = ({ type }) => {
   }, []);
 
   return (
+    
     <div className="">
       <ToastContainer
         position="top-center"

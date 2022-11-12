@@ -5,6 +5,8 @@ import { Route } from "react-router-dom";
 import BusRoutesServices from "../../services/BusRoutesServices";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NavBar from "../NavBar";
+import { Footer } from "../FooterComponent";
 
 
 const AddBusRoute = ({ type }) => {
@@ -49,6 +51,10 @@ const AddBusRoute = ({ type }) => {
 
   return (
     <div className="">
+
+
+
+      
       <ToastContainer
         position="top-center"
         autoClose={5000}

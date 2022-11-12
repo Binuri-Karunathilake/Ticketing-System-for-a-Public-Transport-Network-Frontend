@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import BusTypesService from "../../services/BusTypesService";
+import { Footer } from "../FooterComponent";
+import NavBar from "../NavBar";
+
+
 
 const BeginBusJourney = () => {
   const [tripDetails, setTripDetails] = useState({
@@ -59,6 +63,9 @@ const BeginBusJourney = () => {
   console.log(busTypes);
 
   return (
+
+
+    
     <div className="card p-4 mt-5">
       <div className="card-head">
         <h4>Start Journey</h4>

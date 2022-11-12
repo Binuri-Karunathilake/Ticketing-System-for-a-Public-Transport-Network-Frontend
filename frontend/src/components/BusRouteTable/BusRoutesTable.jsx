@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import BusRoutesServices from "../../services/BusRoutesServices";
 import BusRoute from "./BusRoute";
+import { Footer } from "../FooterComponent";
+import NavBar from "../NavBar";
+
 
 const BusRoutesTable = () => {
   const [routes, setRoutes] = useState([
@@ -30,6 +33,8 @@ const BusRoutesTable = () => {
 
   return (
     <div>
+
+      
       <div className="card m-4 p-5 shadow bg-body rounded border-0">
         <div class="card-header mb-4">
           <h6 class="card-title">Bus Routes</h6>

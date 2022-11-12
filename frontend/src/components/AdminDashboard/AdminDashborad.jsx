@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../NavBar";
-import { Footer } from "../FooterComponent";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
 
 import {
   MDBCard,
@@ -15,7 +15,7 @@ import {
 const AdminDashborad = () => {
   return (
     <div>
-      <NavBar />
+      <AdminNavbar />
       <br></br>
       <br></br>
       <br></br>
@@ -210,7 +210,7 @@ const AdminDashborad = () => {
       <br></br>
       <br></br>
 
-      <Footer />
+      <AdminFooter />
 
     </div>
     
