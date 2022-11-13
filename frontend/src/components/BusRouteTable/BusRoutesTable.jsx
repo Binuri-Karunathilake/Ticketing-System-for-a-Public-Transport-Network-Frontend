@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import BusRoutesServices from "../../services/BusRoutesServices";
 import BusRoute from "./BusRoute";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
+
 
 const BusRoutesTable = () => {
   const [routes, setRoutes] = useState([
@@ -29,7 +32,18 @@ const BusRoutesTable = () => {
   }, []);
 
   return (
-    <div>
+    <div> <div>
+    <AdminNavbar />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
+      
       <div className="card m-4 p-5 shadow bg-body rounded border-0">
         <div class="card-header mb-4">
           <h6 class="card-title">Bus Routes</h6>
@@ -58,6 +72,18 @@ const BusRoutesTable = () => {
           </div>
         </div>
       </div>
+    </div>
+    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <AdminFooter />
+
     </div>
   );
 };

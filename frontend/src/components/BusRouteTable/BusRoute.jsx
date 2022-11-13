@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BusRoutesServices from "../../services/BusRoutesServices";
 import Swal from "sweetalert2";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
 
 const BusRoute = ({ route, index }) => {
   const deleteRoute = async () => {
@@ -16,7 +18,7 @@ const BusRoute = ({ route, index }) => {
         confirmButtonText: "Yes, delete it!",
       }).then(async (result) => {
         if (result.isConfirmed) {
-          const reply = await BusRoutesServices.deleteBusRoute(route.id);
+          const reply = await BusRoutesServices.deleteBusRoute(route._id);
           console.log(reply);
           Swal.fire("Deleted!", "Your file has been deleted.", "success");
           window.location.reload(false);
@@ -26,6 +28,10 @@ const BusRoute = ({ route, index }) => {
   };
 
   return (
+
+
+
+    
     <tr>
       <th scope="row">{index + 1}</th>
       <td>{route.name}</td>

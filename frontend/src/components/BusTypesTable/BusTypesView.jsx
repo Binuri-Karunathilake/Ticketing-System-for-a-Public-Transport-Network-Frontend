@@ -3,11 +3,10 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import BusTypesService from "../../services/BusTypesService"
-import BusType from "./BusTypes";
-import AdminNavbar from "../AdminNavbar";
-import { AdminFooter } from "../AdminFooter";
+import NavBar from "../NavBar";
+import { Footer } from "../FooterComponent";
 
-const BusTypesTable = () => {
+const BusTypeView = () => {
     const [BusTypes, setBusTypes] = useState([{
         name: "",
         numberPlate: "",
@@ -15,6 +14,19 @@ const BusTypesTable = () => {
         capacity: "",
         route:"",
       }]);
+
+const BusType = ({ BusType, index }) => {   
+    return (
+          <tr>
+            <th scope="row">{index + 1}</th>
+            <td>{BusType.name}</td>
+            <td>{BusType.numberPlate}</td>
+            <td>{BusType.day}</td>
+            <td>{BusType.capacity}</td>
+            <td>{BusType.routeName}</td>
+          </tr>
+        );
+      };
 
   const getBusTypes = async () => {
     try {
@@ -33,18 +45,16 @@ const BusTypesTable = () => {
   console.log(BusTypes);
 
   return (
-    <div>    <div>
-    <AdminNavbar />
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-
-      
+    <div>
+            <NavBar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="card m-4 p-5 shadow bg-body rounded border-0">
         <div class="card-header mb-4">
           <h6 class="card-title">Bus Types</h6>
@@ -78,23 +88,18 @@ const BusTypesTable = () => {
           </div>
         </div>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <Footer />
     </div>
-    <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-
-    
-
-      <AdminFooter />
-
-    </div>
-  
   );
 };
 
-export default BusTypesTable;
+export default BusTypeView;

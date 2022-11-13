@@ -1,12 +1,13 @@
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-export const Footer = () => {
+export const AdminFooter = () => {
   return (
-    <MDBFooter bgColor='info' className='text-center text-lg-start text-muted'>
+    <MDBFooter bgColor='black' className='text-center text-lg-start text-muted'>
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 text-white d-none d-lg-block'>
           <span>Get connected with us on social networks:</span>
         </div>
+
 
         <div>
           <a href='' className='me-4 text-white'>
@@ -44,28 +45,6 @@ export const Footer = () => {
               <p>
                 +94 11 2345678              </p>
             </MDBCol>
-
-            <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Quick Links</h6>
-              <p>
-                <a href='#!' className='text-white'>
-                  Home
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-white'>
-                  About Us
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-white'>
-                  Contact Us
-                </a>
-              </p>
-
-            </MDBCol>
-
-            
 
             <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>Customer Service</h6>

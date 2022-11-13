@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import BusTypesService from "../../services/BusTypesService";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
+
+
 
 const BeginBusJourney = () => {
   const [tripDetails, setTripDetails] = useState({
@@ -32,7 +36,10 @@ const BeginBusJourney = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(tripDetails);
-    localStorage.setItem("tripDetails", JSON.stringify(tripDetails));
+    localStorage.setItem(
+      "tripDetails",
+      JSON.stringify({ tripDetails, busTypes })
+    );
     window.location = "/BusJourney/ticket";
   };
 
@@ -57,6 +64,21 @@ const BeginBusJourney = () => {
 
   return (
     <div>
+    <AdminNavbar />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
+    
+    <div className="card p-4 mt-5">
+      <div className="card-head">
+        <h4>Start Journey</h4>
+      </div>
       <div className="row">
         <form className="row g-3" onSubmit={handleSubmit}>
           <div className="col-md-6">
@@ -73,7 +95,7 @@ const BeginBusJourney = () => {
               onChange={handleOnChange}
             >
               {busTypes.map((type, index) => {
-                return <option value={type.id}>{type.name}</option>;
+                return <option value={type._id}>{type.name}</option>;
               })}
             </select>
           </div>
@@ -101,6 +123,18 @@ const BeginBusJourney = () => {
           </div>
         </form>
       </div>
+    </div>
+    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <AdminFooter />
+
     </div>
   );
 };
