@@ -33,18 +33,18 @@ const AddPayment = ({ type }) => {
 
   const userId = localStorage.getItem("user");
 
-  const notify = () => {
-    toast.success("Payment added successfully", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
-  };
+  // const notify = () => {
+  //   toast.success("Payment added successfully", {
+  //     position: "top-center",
+  //     autoClose: 5000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "colored",
+  //   });
+  // };
 
   const getUserDetails = async () => {
     const userRf = await axios.get(API_URL + "user/payment/" + userId);
@@ -58,17 +58,6 @@ const AddPayment = ({ type }) => {
     getUserDetails();
   }, []);
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   console.log(route);
-  //   try {
-  //     const reply = await BusRoutesServices.addBusRoute(route);
-  //     console.log(reply);
-  //     notify();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   return (
     <div>

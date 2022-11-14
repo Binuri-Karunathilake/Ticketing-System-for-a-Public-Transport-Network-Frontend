@@ -22,9 +22,8 @@ const UserDashborad = () => {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+
+
 
       <div
         className="MDBROW"
@@ -235,9 +234,6 @@ const UserDashborad = () => {
 
       </div>
 
-      <br></br>
-      <br></br>
-      <br></br>
       <br></br>
       <br></br>
       <br></br>
