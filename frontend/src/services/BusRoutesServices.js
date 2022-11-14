@@ -18,4 +18,8 @@ class BusRoutesService {
     }
 }
 
-export default new BusRoutesService();
+const singletonInstance = new BusRoutesService();
+
+Object.freeze(singletonInstance);
+
+export default singletonInstance;
