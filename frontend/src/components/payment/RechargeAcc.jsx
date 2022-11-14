@@ -115,6 +115,43 @@ const RechargeAcc = ({ type }) => {
                     onChange={handleOnChange}
                   />
                 </div>
+                <br></br>
+                <div class="row gy-3">
+                
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required/>
+              <small class="text-muted">Full name as displayed on card</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required/>
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required/>
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required/>
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+          </div>
+
                   </div>
                   <div className="col-12">
                     <button type="submit" className="btn btn-success me-3">
@@ -124,7 +161,7 @@ const RechargeAcc = ({ type }) => {
             
                     
                     
-                    <p> Note : Minimum amount to recharge is Rs.500. <br></br>Transaction fee of 2% will be collected towards payment gateway charges.</p>
+                    <p> <b>Note</b> : Minimum amount to recharge is Rs.500. <br></br>Transaction fee of 2% will be collected towards payment gateway charges.</p>
 
                   </div>
                 </form></div>
