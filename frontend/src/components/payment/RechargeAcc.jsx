@@ -26,18 +26,18 @@ const RechargeAcc = ({ type }) => {
     //   setRoute({ name: "", ticketPrice: 0, stopList: "" });
     // };
   
-    const notify = () => {
-      toast.success("Route added successfully", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    };
+    // const notify = () => {
+    //   toast.success("Route added successfully", {
+    //     position: "top-center",
+    //     autoClose: 5000,
+    //     hideProgressBar: false,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     theme: "colored",
+    //   });
+    // };
   
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -46,11 +46,32 @@ const RechargeAcc = ({ type }) => {
         console.log(API_URL+'user/payment/'+user);
         const reply = await axios.post (API_URL+'user/payment/'+user,{amt: route.ticketPrice});
         console.log(reply);
-        notify();
+        // notify();
       } catch (error) {
         console.log(error);
       }
     };
+
+    (function () {
+      'use strict'
+    
+     
+      var forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+    
   
     return (
 
@@ -185,6 +206,7 @@ const RechargeAcc = ({ type }) => {
       <Footer />
 
     </div>
+
     );
   };
   
