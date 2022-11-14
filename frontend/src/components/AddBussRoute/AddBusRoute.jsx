@@ -24,7 +24,7 @@ const AddBusRoute = ({ type }) => {
   };
 
   const notify = () => {
-    toast.success("Route added successfully", {
+    toast.success("Bus Type added successfully", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
