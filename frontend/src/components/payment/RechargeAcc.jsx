@@ -7,6 +7,9 @@ import "react-toastify/dist/ReactToastify.css";
 import NavBar from "../NavBar";
 import { Footer } from "../FooterComponent";
 import { API_URL } from "../../constants/CommonConstants";
+import Swal from "sweetalert2";
+
+
 
 const RechargeAcc = ({ type }) => {
     const [route, setRoute] = useState({
@@ -43,35 +46,36 @@ const RechargeAcc = ({ type }) => {
       e.preventDefault();
       console.log(route);
       try {
-        console.log(API_URL+'user/payment/'+user);
-        const reply = await axios.post (API_URL+'user/payment/'+user,{amt: route.ticketPrice});
-        console.log(reply);
+        if(route.ticketPrice >= 500){
+          console.log(API_URL+'user/payment/'+user);
+          const reply = await axios.post (API_URL+'user/payment/'+user,{amt: route.ticketPrice});
+          console.log(reply);
+          Swal.fire({
+            title: "Success!",
+            text: "Payment Recharge Success!",
+            icon: "success",
+            confirmButtonText: "OK",
+            type: "success",
+          }).then((okay) => {
+            if (okay) {
+              window.location.href = "/payment/rechargeAcc";
+            }
+          });
+        }else {
+          Swal.fire({
+            title: "Error!",
+            text: "Payment Recharge Not Success",
+            icon: "error",
+            confirmButtonText: "OK",
+            type: "success",
+          });
+        }
         // notify();
       } catch (error) {
         console.log(error);
       }
     };
 
-    (function () {
-      'use strict'
-    
-     
-      var forms = document.querySelectorAll('.needs-validation')
-    
-      // Loop over them and prevent submission
-      Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-          form.addEventListener('submit', function (event) {
-            if (!form.checkValidity()) {
-              event.preventDefault()
-              event.stopPropagation()
-            }
-    
-            form.classList.add('was-validated')
-          }, false)
-        })
-    })()
-    
   
     return (
 
@@ -150,7 +154,7 @@ const RechargeAcc = ({ type }) => {
 
             <div class="col-md-6">
               <label for="cc-number" class="form-label">Credit card number</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required/>
+              <input type="number" class="form-control" id="cc-number" maxLength="16" placeholder="" required/>
               <div class="invalid-feedback">
                 Credit card number is required
               </div>
@@ -158,7 +162,7 @@ const RechargeAcc = ({ type }) => {
 
             <div class="col-md-3">
               <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required/>
+              <input type="date" class="form-control" id="cc-expiration" placeholder="" required/>
               <div class="invalid-feedback">
                 Expiration date required
               </div>
@@ -166,12 +170,14 @@ const RechargeAcc = ({ type }) => {
 
             <div class="col-md-3">
               <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required/>
+              <input type="number" class="form-control" id="cc-cvv" maxLength="3" placeholder="" required/>
               <div class="invalid-feedback">
                 Security code required
               </div>
             </div>
           </div>
+
+          
 
                   </div>
                   <div className="col-12">
@@ -202,6 +208,8 @@ const RechargeAcc = ({ type }) => {
       <br></br>
       <br></br>
       <br></br>
+                
+
 
       <Footer />
 
