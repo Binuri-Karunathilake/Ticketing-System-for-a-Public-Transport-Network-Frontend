@@ -22,4 +22,8 @@ class BusTypesService{
     }
 }
 
-export default new BusTypesService()
+const singletonInstance = new BusTypesService();
+
+Object.freeze(singletonInstance);
+
+export default singletonInstance;
