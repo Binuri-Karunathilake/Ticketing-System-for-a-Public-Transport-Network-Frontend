@@ -29,7 +29,7 @@ export default function NavBar() {
     <div className="fixed-top">
       <MDBNavbar expand="lg" light style={{ backgroundColor: "#0DCAF0" }}>
         <MDBContainer>
-          <MDBNavbarBrand className="text-dark" href="/AdminDashboard">
+          <MDBNavbarBrand className="text-dark" href="/UserDash">
             <MDBIcon size="2x" fas icon="bus" />
             &nbsp;
             <b>
@@ -57,16 +57,7 @@ export default function NavBar() {
                 About Us
               </MDBNavbarLink>
             </MDBNavbarItem>
-            {/* <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
-                Services
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
-                Careers
-              </MDBNavbarLink>
-            </MDBNavbarItem> */}
+          
             <MDBNavbarItem>
               <MDBNavbarLink
                 className="text-muted"
@@ -77,36 +68,7 @@ export default function NavBar() {
                 Contact Us
               </MDBNavbarLink>
             </MDBNavbarItem>
-            {/*<MDBNavbarItem>
-                     <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="facebook-f" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                    <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="whatsapp" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                    <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="instagram" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem> 
-                <MDBNavbarItem>
-                    <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="twitter" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                    <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="linkedin-in" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                    <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="youtube" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem> */}
+  
           </MDBNavbarNav>
           <MDBNavbarToggler
             type="button"
@@ -150,51 +112,7 @@ export default function NavBar() {
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>
-      {/* <MDBNavbar expand='lg' light bgColor='white'>
-      <MDBContainer > */}
-      {/* <MDBNavbarBrand className='text-dark' href='/AdminDashboard'><MDBIcon size='2x' fas icon="bus" />&nbsp;Journy <i>.lk</i></MDBNavbarBrand> */}
-
-      {/* <MDBNavbarToggler
-          aria-controls='navbarSupportedContent'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-          onClick={() => setShowBasic(!showBasic)}
-        >
-          <MDBIcon icon='bars' fas />
-        </MDBNavbarToggler> */}
-
-      {/* <MDBCollapse navbar show={showBasic}> */}
-      {/* <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'> */}
-      {/* <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
-                Home
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
-                About Us
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
-                Services
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
-                Careers
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink className='text-muted' active aria-current='page' href='#'>
-                Contact Us
-              </MDBNavbarLink>
-            </MDBNavbarItem> */}
-      {/* </MDBNavbarNav> */}
-
-      {/* </MDBCollapse> */}
-      {/* </MDBContainer>
-    </MDBNavbar> */}
+      
     </div>
   );
 }
