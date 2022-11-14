@@ -7,6 +7,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import StopDetails from "./StopDetails";
+import { AdminFooter } from "../AdminFooter";
+import AdminNavbar from "../AdminNavbar";
+
 
 const RouteDetails = () => {
   const [stopList, setStopList] = useState([]);
@@ -25,6 +28,17 @@ const RouteDetails = () => {
 
   return (
     <div>
+
+
+
+<div>
+      <AdminNavbar />
+      <br></br>
+      <br></br>
+      <br></br>
+  
+
+
       <div className="row bg-grey h-100" style={{ height: "100%" }}>
         <div className="col">
           <div className="row">
@@ -86,6 +100,16 @@ const RouteDetails = () => {
           </div>
         </div>
       </div>
+
+
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+
+      <AdminFooter />
+    </div>
     </div>
   );
 };

@@ -22,9 +22,8 @@ const UserDashborad = () => {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+
+
 
       <div
         className="MDBROW"
@@ -111,7 +110,7 @@ const UserDashborad = () => {
           </div>
         </div> */}
           <MDBCol sm="3">
-            <MDBCard
+          <MDBCard
               className=" "
               style={{
                 boxShadow:
@@ -122,11 +121,14 @@ const UserDashborad = () => {
                 className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
                 style={{ color: "white" }}
               >
-                <MDBIcon fas icon="fa-solid fa-check fa-lg text-black" />
-                <br /> <span></span>
+                
+                
+                <MDBIcon fas icon="fa-solid fa-clipboard fa-lg text-black" />
+                <br />
+                <span></span>
               </MDBCardHeader>
-              <Link to="/Safety" class="btn btn-info">
-                Safety
+              <Link to="/payment/add" class="btn btn-info">
+                Payment
               </Link>
             </MDBCard>
           </MDBCol>
@@ -183,7 +185,7 @@ const UserDashborad = () => {
           </MDBCol>
 
           <MDBCol sm="3">
-            <MDBCard
+          <MDBCard
               className=" "
               style={{
                 boxShadow:
@@ -194,14 +196,11 @@ const UserDashborad = () => {
                 className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
                 style={{ color: "white" }}
               >
-                
-                
-                <MDBIcon fas icon="fa-solid fa-clipboard fa-lg text-black" />
-                <br />
-                <span></span>
+                <MDBIcon fas icon="fa-solid fa-check fa-lg text-black" />
+                <br /> <span></span>
               </MDBCardHeader>
-              <Link to="/payment/add" class="btn btn-info">
-                Payment
+              <Link to="/Safety" class="btn btn-info">
+                Safety
               </Link>
             </MDBCard>
           </MDBCol>
@@ -240,16 +239,9 @@ const UserDashborad = () => {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
 
       <Footer />
-    </div>
-
-    
-
-    
+    </div>    
   );
 
 

@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import TicketServices from "../../services/TicketServices";
-import NavBar from "../NavBar";
-import { Footer } from "../FooterComponent";
+import AdminNavbar from "../AdminNavbar";
+import { AdminFooter } from "../AdminFooter";
 
 const AdminTicketTable = () => {
   const [tickets, setTickets] = useState([
@@ -29,7 +29,7 @@ const AdminTicketTable = () => {
   return (
     <div>
       <div>
-        <NavBar />
+        <AdminNavbar />
         <br></br>
         <br></br>
         <br></br>
@@ -85,8 +85,8 @@ const AdminTicketTable = () => {
         <br></br>
         <br></br>
 
-        <Footer />
-      </div>
+      <AdminFooter />
+    </div>
     </div>
   );
 };
