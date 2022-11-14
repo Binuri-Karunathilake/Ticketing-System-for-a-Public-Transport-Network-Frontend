@@ -53,15 +53,7 @@ const AdminDashborad = () => {
             </MDBCard>
           </MDBCol>
 
-          {/* <div class="card-header">Routes</div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-           
-          </div> */}
+
 
           <MDBCol sm="3">
             <MDBCard
@@ -86,19 +78,7 @@ const AdminDashborad = () => {
             </MDBCard>
           </MDBCol>
 
-          {/* <div class="card">
-          <div class="card-header">Featured</div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-            <Link to="/BusRoutes/add" class="btn btn-primary">
-              Add Route
-            </Link>
-          </div>
-        </div> */}
+
           <MDBCol sm="3">
             <MDBCard
               className=" "
@@ -120,19 +100,7 @@ const AdminDashborad = () => {
             </MDBCard>
           </MDBCol>
 
-          {/* <div class="card">
-          <div class="card-header">Featured</div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-            <Link to="/BusTypes" class="btn btn-primary">
-              View Bus Types
-            </Link>
-          </div>
-        </div> */}
+
 
           <MDBCol sm="3">
             <MDBCard
@@ -159,19 +127,7 @@ const AdminDashborad = () => {
           </MDBCol>
         </MDBRow>
 
-        {/* <div class="card">
-          <div class="card-header">Featured</div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-            <Link to="/BusTypes/add" class="btn btn-primary">
-              Add Bus Types
-            </Link>
-            </div>
-          </div> */}
+
 
         <MDBRow
           style={{ paddingTop: "4%", paddingLeft: "4%", paddingRight: "4%" }}

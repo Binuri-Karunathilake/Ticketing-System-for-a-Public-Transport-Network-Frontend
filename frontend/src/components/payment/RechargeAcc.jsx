@@ -22,9 +22,6 @@ const RechargeAcc = ({ type }) => {
     const user = localStorage.getItem('user');
     console.log(user);
 
-    // const resetValue = (e) => {
-    //   setRoute({ name: "", ticketPrice: 0, stopList: "" });
-    // };
   
     const notify = () => {
       toast.success("Route added successfully", {

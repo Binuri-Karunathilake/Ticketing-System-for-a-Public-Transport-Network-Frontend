@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import TicketServices from "../../services/TicketServices";
@@ -22,6 +22,8 @@ const AdminTicketTable = () => {
     setTickets(refTicket.data);
   };
 
+  const [search, setSearch] = useState("");
+
   useEffect(() => {
     getTickets();
   }, []);
@@ -40,6 +42,18 @@ const AdminTicketTable = () => {
         <br></br>
 
         <div className="card m-4 p-5 shadow bg-body rounded border-0">
+          <div className="col-12">
+            <input
+              type="text"
+              className="form-control"
+              style={{ width: 300, margin: 5, marginBottom: 20 }}
+              placeholder="Search..."
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+              value={search}
+            />
+          </div>
           <div class="card-header mb-4">
             <h6 class="card-title">Bus Types</h6>
           </div>
@@ -58,18 +72,28 @@ const AdminTicketTable = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {tickets.map((ticket, index) => {
-                      return (
-                        <tr>
-                          <th scope="row">{index + 1}</th>
-                          <td>{ticket.startStop}</td>
-                          <td>{ticket.endStop}</td>
-                          <td>Rs. {Math.round(ticket.ticketPrice)}</td>
-                          <td>{ticket.userId}</td>
-                          <td>{ticket.ticketDate}</td>
-                        </tr>
-                      );
-                    })}
+                    {tickets
+                      .filter((val) => {
+                        if (
+                          val.startStop
+                            .toLowerCase()
+                            .includes(search.toLowerCase())
+                        ) {
+                          return val;
+                        }
+                      })
+                      .map((ticket, index) => {
+                        return (
+                          <tr>
+                            <th scope="row">{index + 1}</th>
+                            <td>{ticket.startStop}</td>
+                            <td>{ticket.endStop}</td>
+                            <td>Rs. {Math.round(ticket.ticketPrice)}</td>
+                            <td>{ticket.userId}</td>
+                            <td>{ticket.ticketDate}</td>
+                          </tr>
+                        );
+                      })}
                   </tbody>
                 </table>
               </div>
@@ -85,8 +109,8 @@ const AdminTicketTable = () => {
         <br></br>
         <br></br>
 
-      <AdminFooter />
-    </div>
+        <AdminFooter />
+      </div>
     </div>
   );
 };
