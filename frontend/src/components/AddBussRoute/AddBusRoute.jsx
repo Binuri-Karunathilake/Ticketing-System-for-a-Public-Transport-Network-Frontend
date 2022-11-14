@@ -43,6 +43,7 @@ const AddBusRoute = ({ type }) => {
       const reply = await BusRoutesServices.addBusRoute(route);
       console.log(reply);
       notify();
+      window.location = "/busRoutes";
     } catch (error) {
       console.log(error);
     }
