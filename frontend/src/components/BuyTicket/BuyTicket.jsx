@@ -7,8 +7,9 @@ import BusTypesService from "../../services/BusTypesService";
 import QrReader from "react-qr-scanner";
 import { toast, ToastContainer } from "react-toastify";
 import TicketServices from "../../services/TicketServices";
-import { Footer } from "../FooterComponent";
-import NavBar from "../NavBar";
+import UserServices from "../../services/UserServices";
+import { AdminFooter } from "../AdminFooter";
+import AdminNavbar from "../AdminNavbar";
 const BuyTicket = () => {
   const { tripDetails, busTypes } = JSON.parse(
     localStorage.getItem("tripDetails")
@@ -57,6 +58,15 @@ const BuyTicket = () => {
     ticketPrice: 0,
   });
 
+  const [user, setUser] = useState({
+    name: "",
+    contactNo: "",
+    email: "",
+    balance: 0,
+  });
+
+  const [price, setPrice] = useState(0);
+
   const [reader, setReader] = useState(false);
   const [scanned, setScanned] = useState(false);
   const [userId, setUserId] = useState("");
@@ -87,16 +97,6 @@ const BuyTicket = () => {
       console.log(
         price + " == " + unitPrice + " == " + stopLen + " == " + route.name
       );
-      toast.success("Ticket bought successfully", {
-        position: "top-center",
-        autoClose: 500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
       console.log({ ticket, price, route, userId });
       try {
         const newTicket = await TicketServices.addTicket({
@@ -108,8 +108,28 @@ const BuyTicket = () => {
         console.log("====================================");
         console.log(newTicket);
         console.log("====================================");
+        toast.success("Ticket bought successfully", {
+          position: "top-center",
+          autoClose: 500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       } catch (error) {
         console.log(error);
+        toast.error("Account Balance is insufficient", {
+          position: "top-center",
+          autoClose: 500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
       setScanned(false);
     }
@@ -121,6 +141,9 @@ const BuyTicket = () => {
 
   const hanldeOnClick = () => {
     setReader(!reader);
+    if (scanned) {
+      setScanned(!scanned);
+    }
   };
 
   const handleErrorFile = (error) => {};
@@ -130,6 +153,17 @@ const BuyTicket = () => {
       setScanned(true);
       setUserId(result.text);
       setReader(false);
+      const stop1 = getIndex(ticket.startStop);
+      const stop2 = getIndex(ticket.endStop);
+      const unitPrice = route.ticketPrice / route.stopList.length;
+      const stopLen = Math.abs(stop1 - stop2);
+      const price = unitPrice * stopLen;
+      setPrice(price);
+      const refUser = await UserServices.getUserById(result.text);
+      setUser(refUser.data.user);
+      console.log("====================================");
+      console.log(refUser.data.user);
+      console.log("====================================");
     }
   };
 
@@ -144,118 +178,146 @@ const BuyTicket = () => {
 
   return (
     <div>
-    <NavBar />
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <div className="card p-3 mt-5">
-      <div className="card-header mb-3">
-        <h4>Buy Ticket</h4>
-      </div>
-      <ToastContainer
-        position="top-center"
-        autoClose={500}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
-      <div className="row">
-        <form onSubmit={handleSubmit}>
-          <div className="col-6">
-            <label for="busType1" className="form-label">
-              Starting Bus Stop
-            </label>
-            <select
-              type="text"
-              required
-              className="form-control"
-              id="startStop"
-              name="startStop"
-              value={ticket.startStop}
-              onChange={handleOnChange}
+      <AdminNavbar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div className="card p-3 mt-5">
+        <div className="card-header mb-3">
+          <h4>Buy Ticket</h4>
+        </div>
+        <ToastContainer
+          position="top-center"
+          autoClose={500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
+        <div className="row">
+          <form onSubmit={handleSubmit}>
+            <div className="col-6">
+              <label for="busType1" className="form-label">
+                Starting Bus Stop
+              </label>
+              <select
+                type="text"
+                required
+                className="form-control"
+                id="startStop"
+                name="startStop"
+                value={ticket.startStop}
+                onChange={handleOnChange}
+              >
+                <option>---</option>
+                {route.stopList.map((stop) => {
+                  return <option value={stop}>{stop}</option>;
+                })}
+              </select>
+            </div>
+            <div className="col-6">
+              <label for="busType" className="form-label">
+                Stop Bus Stop
+              </label>
+              <select
+                type="text"
+                required
+                className="form-control"
+                id="endStop"
+                name="endStop"
+                value={ticket.endStop}
+                onChange={handleOnChange}
+              >
+                <option>---</option>
+                {route.stopList.map((stop) => {
+                  return <option value={stop}>{stop}</option>;
+                })}
+              </select>
+            </div>
+            {scanned ? (
+              <button type="submit" className="btn btn-primary mx-3 mt-3">
+                Buy Ticket
+              </button>
+            ) : (
+              <button
+                type="submit"
+                disabled
+                className="btn btn-primary mx-3 mt-3"
+              >
+                Buy Ticket
+              </button>
+            )}
+            <button
+              onClick={hanldeOnClick}
+              type="button"
+              className="btn btn-primary ml-3 mt-3"
             >
-              <option>---</option>
-              {route.stopList.map((stop) => {
-                return <option value={stop}>{stop}</option>;
-              })}
-            </select>
-          </div>
-          <div className="col-6">
-            <label for="busType" className="form-label">
-              Stop Bus Stop
-            </label>
-            <select
-              type="text"
-              required
-              className="form-control"
-              id="endStop"
-              name="endStop"
-              value={ticket.endStop}
-              onChange={handleOnChange}
-            >
-              <option>---</option>
-              {route.stopList.map((stop) => {
-                return <option value={stop}>{stop}</option>;
-              })}
-            </select>
+              Scan QR Code
+            </button>
+          </form>
+          <div className="mt-5">
+            {reader ? (
+              <QrReader
+                delay={300}
+                onError={handleErrorFile}
+                onScan={handleScanFile}
+                style={{
+                  height: 240,
+                  width: 320,
+                }}
+                className="qrReader"
+              />
+            ) : null}
+            {scanned ? (
+              <div class="alert alert-success" role="alert">
+                User authenticated successfully! UserId : {userId}
+              </div>
+            ) : (
+              ""
+            )}
           </div>
           {scanned ? (
-            <button type="submit" className="btn btn-primary mx-3 mt-3">
-              Buy Ticket
-            </button>
+            <div className="card m-3 col-6 g-5">
+              <div className="col-6">
+                Name : {user.name}
+                <br />
+                <br />
+                Email : {user.email}
+                <br />
+                <br />
+                Contact Number : {user.contactNo}
+                <br />
+                <br />
+                Current Balance : {user.balance}
+                <br />
+                <br />
+                Ticket Price : {price}
+              </div>
+            </div>
           ) : (
-            <button
-              type="submit"
-              disabled
-              className="btn btn-primary mx-3 mt-3"
-            >
-              Buy Ticket
-            </button>
+            ""
           )}
+        </div>
+        <div className="row d-flex justify-content-center">
           <button
-            onClick={hanldeOnClick}
+            onClick={endJourney}
             type="button"
-            className="btn btn-primary ml-3 mt-3"
+            className="btn btn-success ml-3 mt-3 col-2"
           >
-            Scan QR Code
+            End Journey {">>"}
           </button>
-        </form>
-        <div className="mt-5">
-          {reader ? (
-            <QrReader
-              delay={300}
-              onError={handleErrorFile}
-              onScan={handleScanFile}
-              style={{
-                height: 240,
-                width: 320,
-              }}
-              className="qrReader"
-            />
-          ) : null}
         </div>
       </div>
-      <div className="row d-flex justify-content-center">
-        <button
-          onClick={endJourney}
-          type="button"
-          className="btn btn-success ml-3 mt-3 col-2"
-        >
-          End Journey {">>"}
-        </button>
-      </div>
-    </div>
-    <br></br>
+      <br></br>
       <br></br>
       <br></br>
       <br></br>
@@ -264,7 +326,7 @@ const BuyTicket = () => {
       <br></br>
       <br></br>
 
-      <Footer />
+      <AdminFooter />
     </div>
   );
 };

@@ -24,6 +24,19 @@ const aboutUs = () => {
 </header>
 
 <main class="px-3">
+
+<br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br> <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
   <h1>About Us!</h1>&nbsp;&nbsp;
   <p class="lead"><h4 style={{textAlign: "center"}}>Welcome To <span id="W_Name1">Journy.lk</span></h4>
     <p style={{textAlign: "center"}}><span id="W_Name2">Journy.lk</span> is a online <span id="W_Type1">ticketing</span> Platform. Here we will provide you only interesting content, which you will like very much. We're dedicated to providing you the best of <span id="W_Type2">ticketing</span>, with a focus on dependability and <span id="W_Spec">ticketing
