@@ -75,8 +75,7 @@ const RechargeAcc = ({ type }) => {
         console.log(error);
       }
     };
-
-  
+      
     return (
 
       <div>
@@ -154,7 +153,7 @@ const RechargeAcc = ({ type }) => {
 
             <div class="col-md-6">
               <label for="cc-number" class="form-label">Credit card number</label>
-              <input type="number" class="form-control" id="cc-number" maxLength="16" placeholder="" required/>
+              <input type="number" class="form-control" id="cc-number" maxLength={16} placeholder="" required/>
               <div class="invalid-feedback">
                 Credit card number is required
               </div>
@@ -170,7 +169,7 @@ const RechargeAcc = ({ type }) => {
 
             <div class="col-md-3">
               <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="number" class="form-control" id="cc-cvv" maxLength="3" placeholder="" required/>
+              <input type="number" class="form-control" id="cc-cvv" maxLength={3} placeholder="" required/>
               <div class="invalid-feedback">
                 Security code required
               </div>
