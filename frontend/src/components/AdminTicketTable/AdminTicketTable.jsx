@@ -5,7 +5,6 @@ import TicketServices from "../../services/TicketServices";
 import AdminNavbar from "../AdminNavbar";
 import { AdminFooter } from "../AdminFooter";
 
-
 const AdminTicketTable = () => {
   const [tickets, setTickets] = useState([
     {
