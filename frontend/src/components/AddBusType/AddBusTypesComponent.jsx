@@ -150,12 +150,7 @@ const AddBusType = ({ type }) => {
                   <label for="day" className="form-label">
                     Day
                   </label>
-                  {/* <input
-                    type="text"
-                    required
-                    className="form-control"
-                    id="day"
-                    name="day" */}
+                 
                   <select
                     type="text"
                     required
