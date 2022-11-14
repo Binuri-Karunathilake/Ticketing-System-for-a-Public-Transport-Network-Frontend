@@ -19,4 +19,8 @@ class TicketServices{
     }
 }
 
-export default new TicketServices()
+const singletonInstance = new TicketServices();
+
+Object.freeze(singletonInstance);
+
+export default singletonInstance;
