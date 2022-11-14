@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import TicketServices from "../../services/TicketServices";
 import AdminNavbar from "../AdminNavbar";
 import { AdminFooter } from "../AdminFooter";
-import { useReactToPrint } from "react-to-print";
 
 const AdminTicketTable = () => {
   const [tickets, setTickets] = useState([

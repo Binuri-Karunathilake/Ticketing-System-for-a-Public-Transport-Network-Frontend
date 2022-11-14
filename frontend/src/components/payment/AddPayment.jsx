@@ -27,24 +27,11 @@ const AddPayment = ({ type }) => {
     setRoute({ ...route, [e.target.name]: e.target.value });
   };
 
-  // const resetValue = (e) => {
-  //   setRoute({ name: "", ticketPrice: 0, stopList: "" });
-  // };
+ 
 
   const userId = localStorage.getItem("user");
 
-  // const notify = () => {
-  //   toast.success("Payment added successfully", {
-  //     position: "top-center",
-  //     autoClose: 5000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     theme: "colored",
-  //   });
-  // };
+
 
   const getUserDetails = async () => {
     const userRf = await axios.get(API_URL + "user/payment/" + userId);

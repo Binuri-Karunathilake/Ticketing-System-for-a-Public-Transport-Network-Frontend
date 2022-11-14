@@ -49,36 +49,7 @@ export default function AdminNavbar() {
             </MDBNavbarItem>
             
 
-            {/*<MDBNavbarItem>
-                     <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="facebook-f" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                    <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="whatsapp" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                    <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="instagram" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem> 
-                <MDBNavbarItem>
-                    <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="twitter" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                    <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="linkedin-in" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                    <MDBNavbarLink active aria-current='page' href='#'>
-                        <MDBIcon fab icon="youtube" className="text-muted"/>
-                    </MDBNavbarLink>
-                </MDBNavbarItem> */}
+
           </MDBNavbarNav>
           <MDBNavbarToggler
             type="button"

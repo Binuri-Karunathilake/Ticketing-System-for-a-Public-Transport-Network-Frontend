@@ -60,7 +60,6 @@ function App() {
         <Route path='/safety' element={<Safety/>}/>
 
 
-        <Route path='/register' element={<RegDashboard/>} />
         {/* <Route path='/userReg' element={<userReg/>}/> */}
 
         {/*Bus Types*/}        

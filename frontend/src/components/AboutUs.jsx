@@ -44,9 +44,7 @@ const aboutUs = () => {
    <center>
     <p>I will keep posting more important posts on my Website for all of you. Please give your support and love.</p>
      </center></p>
-  {/* <p class="lead">
-    <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-  </p> */}
+
 </main>
 
 
