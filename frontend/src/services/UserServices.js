@@ -13,6 +13,10 @@ class BusTypesService{
     userRegistration(user) {
         return axios.post(API_URL+'user/register', user);
     }
+
+    getUserById(id) {
+        return axios.get(API_URL + 'user/payment/'+ id);
+    }
 }
 
 export default new BusTypesService()

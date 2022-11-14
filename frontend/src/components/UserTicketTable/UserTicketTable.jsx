@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import TicketServices from "../../services/TicketServices";
-import AdminNavbar from "../AdminNavbar";
-import { AdminFooter } from "../AdminFooter";
+import Navbar from "../NavBar";
+import { Footer } from "../FooterComponent";
 
 const AdminTicketTable = () => {
   const [tickets, setTickets] = useState([
@@ -29,7 +29,7 @@ const AdminTicketTable = () => {
   return (
     <div>
       <div>
-        <AdminNavbar />
+        <Navbar />
         <br></br>
         <br></br>
         <br></br>
@@ -49,11 +49,10 @@ const AdminTicketTable = () => {
                 <table class="table table-striped table-hover">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
+                      <th scope="col">NO</th>
                       <th scope="col">Start</th>
                       <th scope="col">Destination</th>
                       <th scope="col">Ticket Price</th>
-                      <th scope="col">User-Id</th>
                       <th scope="col">Start Date and Time</th>
                     </tr>
                   </thead>
@@ -65,7 +64,6 @@ const AdminTicketTable = () => {
                           <td>{ticket.startStop}</td>
                           <td>{ticket.endStop}</td>
                           <td>Rs. {Math.round(ticket.ticketPrice)}</td>
-                          <td>{ticket.userId}</td>
                           <td>{ticket.ticketDate}</td>
                         </tr>
                       );
@@ -85,7 +83,7 @@ const AdminTicketTable = () => {
         <br></br>
         <br></br>
 
-      <AdminFooter />
+      <Footer />
     </div>
     </div>
   );

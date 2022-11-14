@@ -110,7 +110,7 @@ const UserDashborad = () => {
           </div>
         </div> */}
           <MDBCol sm="3">
-            <MDBCard
+          <MDBCard
               className=" "
               style={{
                 boxShadow:
@@ -121,13 +121,18 @@ const UserDashborad = () => {
                 className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
                 style={{ color: "white" }}
               >
-                <MDBIcon fas icon="fa-solid fa-check fa-lg text-black" />
-                <br /> <span></span>
+
+                <MDBIcon fas icon="fa-solid fa-clipboard fa-lg text-black" />
+                <br />
+                <span></span>
               </MDBCardHeader>
-              <Link to="/Safety" class="btn btn-info">
-                Safety
+              <Link to="/payment/add" class="btn btn-info">
+                Payment
               </Link>
             </MDBCard>
+
+
+            
           </MDBCol>
           {/* <div class="card">
           <div class="card-header">Featured</div>
@@ -157,7 +162,7 @@ const UserDashborad = () => {
             </Link>
             </div>
           </div> */}
-          <MDBCol sm="3">
+         <MDBCol sm="3">
             <MDBCard
               className=" "
               style={{
@@ -169,20 +174,28 @@ const UserDashborad = () => {
                 className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
                 style={{ color: "white" }}
               >
-                
-                <MDBIcon fas icon="fa-solid fa-address-card fa-lg text-black" />
+                <MDBIcon fas icon="fa-solid fa-envelope fa-lg text-black" />
                 <br />
-                
                 <span></span>
               </MDBCardHeader>
-              <Link to="/aboutUs" class="btn btn-info">
-                About Us
+              <Link to="/UserTicketTable" class="btn btn-info">
+                Tickets History
               </Link>
             </MDBCard>
           </MDBCol>
 
+
+
+
+
+
+
+
+
+
+
           <MDBCol sm="3">
-            <MDBCard
+          <MDBCard
               className=" "
               style={{
                 boxShadow:
@@ -193,14 +206,11 @@ const UserDashborad = () => {
                 className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
                 style={{ color: "white" }}
               >
-                
-                
-                <MDBIcon fas icon="fa-solid fa-clipboard fa-lg text-black" />
-                <br />
-                <span></span>
+                <MDBIcon fas icon="fa-solid fa-check fa-lg text-black" />
+                <br /> <span></span>
               </MDBCardHeader>
-              <Link to="/payment/add" class="btn btn-info">
-                Payment
+              <Link to="/Safety" class="btn btn-info">
+                Safety
               </Link>
             </MDBCard>
           </MDBCol>
@@ -227,6 +237,31 @@ const UserDashborad = () => {
               </Link>
             </MDBCard>
           </MDBCol>
+
+
+          <MDBCol sm="3">
+            <MDBCard
+              className=" "
+              style={{
+                boxShadow:
+                  "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+              }}
+            >
+              <MDBCardHeader
+                className=" fw-bold mt-2 h1 pl-2 pt-5 pb-4 text-center"
+                style={{ color: "white" }}
+              >
+                
+                <MDBIcon fas icon="fa-solid fa-address-card fa-lg text-black" />
+                <br />
+                
+                <span></span>
+              </MDBCardHeader>
+              <Link to="/aboutUs" class="btn btn-info">
+                About Us
+              </Link>
+            </MDBCard>
+          </MDBCol>
         </MDBRow>
       </div>
       <br />
@@ -241,11 +276,7 @@ const UserDashborad = () => {
       <br></br>
 
       <Footer />
-    </div>
-
-    
-
-    
+    </div>    
   );
 
 
