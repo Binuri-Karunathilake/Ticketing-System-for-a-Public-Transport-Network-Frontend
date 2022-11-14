@@ -24,6 +24,8 @@ import UserGetQR from './components/UserGetQR/UserGetQR';
 import userReg from './components/Register/user_reg';
 import RegDashboard from './components/Register/user_reg';
 import AdminTicketTable from './components/AdminTicketTable/AdminTicketTable';
+import UserTicketTable from './components/UserTicketTable/UserTicketTable';
+
 import UserTicket from './components/UserTickets/UserTicket';
 import BusTypeView from './components/BusTypesTable/BusTypesView';
 import Safety from './components/Safety';
@@ -70,7 +72,9 @@ function App() {
         <Route path='/BusJourney' element={<BeginBusJourney />} />
         <Route path='/BusJourney/ticket' element={<BuyTicket />} />
         <Route path='/tickets' element={<AdminTicketTable />} />
-        
+        <Route path='/UserTicketTable' element={<UserTicketTable />} />
+
+
 
 
 
